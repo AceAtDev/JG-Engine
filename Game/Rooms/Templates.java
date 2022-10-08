@@ -18,6 +18,18 @@ public interface Templates {
        "+-------    -------+");
    }
 
+   static void closedRoom(){
+      System.out.println
+         ("+------------------+\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+      
+         "+                  +\n"+
+         "+                  +\n"+
+          "+------------------+");
+   }
+
    static void oneGateRoom(int direction){
 
       if(direction == 1){ // need bottom door

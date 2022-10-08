@@ -2,30 +2,33 @@ package Game.Rooms;
 
 public class Map {
    
-   public double currentRoom;
+   
 
-   final static double startingRoom = 5;
+   
+   public static Room startingRoom = new Room();
 
-   public void manageRooms(){
-      double[][] map = 
-         {{0,0,0,0,0},
-          {0,0,1,0,0},
-          {0,1,5,1,0},
-          {0,0,1,0,0},
-          {0,0,0,0,0}};
+   Room CR = new Room(true); // Closed room/Unreachable room
+   
+   
+   
+   public Room[][] map = 
+   {{null , null , null,},
 
-      for (double[] line : map) {
-         for (double roomValue : line){
-            if (roomValue == 5){
+    {null , startingRoom , null},
 
-            }
-         }
-      }
+    {null , null , null,}};
+
+
+   
+
+  
+   public Object[][] getMap(){
+
+      return map;
    }
 
-   public double findPotentialRooms(){
-      return (Double) null;
-   }
+
+
 
    
 }

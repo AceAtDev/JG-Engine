@@ -6,19 +6,52 @@ public class Room implements Templates {
    protected boolean downDoor;
    protected boolean leftDoor;
    protected boolean rightDoor;
+   protected boolean isClosedRoom;
    
-   private boolean startingRoom;
+   private int id;
 
 
-   public Room(boolean startingRoom ,boolean upDoor, boolean downDoor, 
-   boolean leftDoor, boolean rightDoor){
-      this.startingRoom = startingRoom;
-      this.upDoor = upDoor;
-      this.downDoor = downDoor;
-      this.leftDoor = leftDoor;
-      this.rightDoor = rightDoor;
+   /* Room Directions
+
+
+                      UP: 1
+               +------------------+
+               +                  +
+               +                  +
+ Left: 3 <--   +                  +  --> Right: 2
+               +                  +
+               +                  +
+               +                  +
+               +------------------+
+                      Down: 0
+   
+   
+   */
+   
+
+   public int getRoomValue(){
+      id = -1;
+      return id;
+   }
+
+
+   public Room(){ // Starting Room
       
    }
+
+   public Room(boolean isClosedRoom){
+      this.isClosedRoom = isClosedRoom;
+   }
+
+   public void printMainRoom(){
+      Templates.mainRoom();
+   }
+
+   public Room(int direction){
+
+   }
+
+   
 
 }
 
