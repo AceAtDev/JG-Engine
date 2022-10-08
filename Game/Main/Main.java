@@ -3,6 +3,7 @@ package Game.Main;
 
 
 import External.Tools;
+import Game.Rooms.Map;
 
 
 class Main{
@@ -11,6 +12,9 @@ class Main{
 
         Tools.ClearConsole();
 
+        Map Rmanager = new Map();
+
+        Rmanager.manageRooms();
         
 
    }

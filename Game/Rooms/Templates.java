@@ -20,7 +20,53 @@ public interface Templates {
 
    static void oneGateRoom(int direction){
 
-
+      if(direction == 1){ // need bottom door
+         System.out.println
+         ("+------------------+\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+      
+         "+                  +\n"+
+         "+                  +\n"+
+          "+-------    -------+");
+      }
+      else if(direction == 2){ // need top door
+         System.out.println
+         ("+-------    -------+\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+      
+         "+                  +\n"+
+         "+                  +\n"+
+          "+------------------+");
+      }
+      else if(direction == 3){ // need left door
+         System.out.println
+         ("+------------------+\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "                   +\n"+
+         "                   +\n"+      
+         "+                  +\n"+
+         "+                  +\n"+
+          "+------------------+");
+      }
+      else if(direction == 4){ // need right door
+         System.out.println
+         ("+------------------+\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  \n"+
+         "+                  \n"+      
+         "+                  +\n"+
+         "+                  +\n"+
+          "+------------------+");
+      }
+      else{
+         throw new IllegalArgumentException("Invalid direction");
+      }
 
    }
 
