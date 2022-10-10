@@ -46,12 +46,7 @@ public class Room implements Templates {
    public void printMainRoom(){
       Templates.mainRoom();
    }
-
-   public Room(int direction){
-
-   }
-
-   
+ 
 
 }
 
