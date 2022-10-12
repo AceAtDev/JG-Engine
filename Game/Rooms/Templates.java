@@ -4,47 +4,82 @@ package Game.Rooms;
 public interface Templates {
 
 
-   static void mainRoom(){
-
-
-      System.out.println
-      ("+-------    -------+\n"+
-      "+                  +\n"+
-      "+                  +\n"+
-      "                   \n"+
-      "                   \n"+      
-      "+                  +\n"+
-      "+                  +\n"+
-       "+-------    -------+");
+   public static void mainRoom(){
+      System.out.println("+---------+          +--------+");
+      System.out.println("|         |          |        |");
+      System.out.println("|         |          |        |");
+      System.out.println("|         |          |        |");
+      System.out.println("+---------+          +--------+");
+      System.out.println("                               ");
+      System.out.println("                               ");
+      System.out.println("                               ");
+      System.out.println("+---------+          +--------+");
+      System.out.println("|         |          |        |");
+      System.out.println("|         |          |        |");
+      System.out.println("|         |          |        |");
+      System.out.println("+---------+          +--------+");
    }
 
-   static void closedRoom(){
-      System.out.println
-         ("+------------------+\n"+
-         "+                  +\n"+
-         "+                  +\n"+
-         "+                  +\n"+
-         "+                  +\n"+      
-         "+                  +\n"+
-         "+                  +\n"+
-          "+------------------+");
+
+
+   public static void closedRoom(){
+      System.out.println("+-----------------------------+");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("+-----------------------------+");
    }
 
-   static void oneGateRoom(int direction){
 
-      if(direction == 1){ // need bottom door
-         System.out.println
-         ("+------------------+\n"+
-         "+                  +\n"+
-         "+                  +\n"+
-         "+                  +\n"+
-         "+                  +\n"+      
-         "+                  +\n"+
-         "+                  +\n"+
-          "+-------    -------+");
-      }
-      else if(direction == 2){ // need top door
-         System.out.println
+
+
+
+   public static void oneGateLeft(){
+
+      System.out.println("+-----------------------------+");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("+------------------------+    |");
+      System.out.println("                         |    |");
+      System.out.println("                         |    |");
+      System.out.println("                         |    |");
+      System.out.println("+------------------------+    |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("+-----------------------------+");
+
+   }
+
+   public static void oneGateRight(){
+
+      System.out.println("+-----------------------------+");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|    +------------------------+");
+      System.out.println("|    |                         ");
+      System.out.println("|    |                         ");
+      System.out.println("|    |                         ");
+      System.out.println("|    +------------------------+");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("|                             |");
+      System.out.println("+-----------------------------+");
+
+   }
+
+   public static void oneGateUp(){
+      System.out.println
          ("+-------    -------+\n"+
          "+                  +\n"+
          "+                  +\n"+
@@ -53,41 +88,33 @@ public interface Templates {
          "+                  +\n"+
          "+                  +\n"+
           "+------------------+");
-      }
-      else if(direction == 3){ // need left door
-         System.out.println
-         ("+------------------+\n"+
-         "+                  +\n"+
-         "+                  +\n"+
-         "                   +\n"+
-         "                   +\n"+      
-         "+                  +\n"+
-         "+                  +\n"+
-          "+------------------+");
-      }
-      else if(direction == 4){ // need right door
-         System.out.println
-         ("+------------------+\n"+
-         "+                  +\n"+
-         "+                  +\n"+
-         "+                  \n"+
-         "+                  \n"+      
-         "+                  +\n"+
-         "+                  +\n"+
-          "+------------------+");
-      }
-      else{
-         throw new IllegalArgumentException("Invalid direction");
-      }
-
    }
 
-   static void twoGatesRoom(boolean rightDoor,boolean leftDoor, boolean downDoor,boolean upDoor){
+   public static void oneGateDown(){
+      System.out.println
+         ("+------------------+\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+
+         "+                  +\n"+      
+         "+                  +\n"+
+         "+                  +\n"+
+         "+-------    -------+");
+   }
 
-      if(rightDoor & leftDoor & upDoor & downDoor){
-         throw new IllegalArgumentException("The \"thereGatesRoom\" can NOT have all boolean true");
-      }
 
-      
+
+
+
+   static void twoGatesUpDown(){
+
+      System.out.println("+-------    -------+");
+      System.out.println("+                  +");
+      System.out.println("+                  +");
+      System.out.println("+                  +");
+      System.out.println("+                  +");
+      System.out.println("+                  +");
+      System.out.println("+-------    -------+");
+
    }
 }
