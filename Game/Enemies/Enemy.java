@@ -1,5 +1,5 @@
 package Game.Enemies;
 
-public class Enemy {
+public class Enemy implements EnemyTemplates {
    
 }

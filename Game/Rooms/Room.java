@@ -8,9 +8,15 @@ public class Room implements RoomTemplates {
    protected int up = 1;
    protected int right = 2;
    protected int left = 3;
-   protected int down = 0;
+   protected int down = 4;
 
-   private int id;
+   protected boolean canExitRight = true;
+   protected boolean canExitLeft = true;
+   protected boolean canExitUp = true;
+   protected boolean canExitDown = true;
+
+
+   //private int id;
 
 
    /* Room Directio:ns
@@ -31,15 +37,40 @@ public class Room implements RoomTemplates {
 
    }
 
-   public Room(int id, int up, int right, int left, int down){
-      this.id = id;
+   public Room(int up, int right, int left, int down){
       this.up = up;
       this.right = right;
       this.down = down;
       this.left = left;
+
+      if(right == 0){
+         canExitRight = false;
+      }
+      if(left == 0){
+         canExitLeft = false;
+      }
+      if(up == 0){
+         canExitUp = false;
+      }
+      if(down == 0){
+         canExitDown = false;
+      }
    }
 
 
+   public boolean getRoomExitLeft(){
+      return canExitLeft;
+   }
+   public boolean getRoomExitRight(){
+      return canExitRight;
+   }
+   public boolean getRoomExitUp(){
+      return canExitUp;
+   }
+   public boolean getRoomExitDown(){
+      return canExitDown;
+   }
+   
 
    public void print(){
 
@@ -125,6 +156,9 @@ public class Room implements RoomTemplates {
 
    }
  
+
+
+
 
 }
 

@@ -16,7 +16,7 @@ class Main{
       //Title.draw();
 
       PlayerController PC = new PlayerController();
-      PlayerController.start();
+      PC.start();
 
         
 
