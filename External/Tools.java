@@ -5,6 +5,7 @@ package External;
 
 import java.util.Scanner;
 
+
 public class Tools{
 
    // A method that will clear console output
@@ -133,6 +134,9 @@ public class Tools{
       return result;
    }
 
-
+   // frezze the code for a period of seconds
+   public static void delayer (long time) throws InterruptedException {
+      Thread.sleep(time);
+   }
    
 }
