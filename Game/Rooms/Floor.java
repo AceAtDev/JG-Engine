@@ -11,31 +11,32 @@ public class Floor {
    private Room fourDirectionRoom = new Room();
    private Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP
 
-   private Room oneGateUp = new Room(1,0,0,0);
-   private Room oneGateRight = new Room(0,2,0,0);
-   private Room oneGateLeft = new Room(0,0,3,0);
-   private Room oneGateDown = new Room(0,0,0,4);
+   private Room oneGateUp = new Room(false,false,true,false);
+   private Room oneGateRight = new Room(true,false,false,false);
+   private Room oneGateLeft = new Room(false,true,false,false);
+   private Room oneGateDown = new Room(false,false,false,true);
 
-   private Room twoGatesUpRight = new Room(1,2,0,0);
-   private Room twoGatesDownRight = new Room(0,2,3,0);
-   private Room twoGatesDownLeft = new Room(0,0,3,4);
-   private Room twoGatesUpLeft = new Room(1,0,3,0);
+   private Room twoGatesUpRight = new Room(true,false,true,false);
+   private Room twoGatesDownRight = new Room(true,false,false,true);
+   private Room twoGatesDownLeft = new Room(false,true,false,true);
+   private Room twoGatesUpLeft = new Room(false,true,true,false);
 
-   private Room threeGatesLeftUpDown = new Room(1,0,3,4);
-   private Room threeGatesLeftUpRight = new Room(1,2,3,0);
+   private Room threeGatesLeftUpDown = new Room(false,true,true,true);
+   private Room threeGatesLeftUpRight = new Room(true,true,true,false);
+   
 
 
 
    private Room currentRoom = null;
-   private int currentRoomX = 0;
-   private int currentRoomY = 0;
+   public int currentRoomX = 0;
+   public int currentRoomY = 0;
    
 
    private Room[][] floor = 
    {
-      {null,         oneGateUp,        oneGateUp,           oneGateUp},
-      {oneGateRight, startingRoom, threeGatesLeftUpRight, twoGatesUpLeft},
-      {null, oneGateDown, null,      null,           null}
+      {null,         oneGateDown,        oneGateDown,           oneGateDown},
+      {oneGateRight, startingRoom, threeGatesLeftUpRight , twoGatesUpLeft},
+      {null,         oneGateUp,        null,            null},
    };
 
 
@@ -71,21 +72,29 @@ public class Floor {
 
 
    public Room moveRight(){
-      return currentRoom = floor[currentRoomY][currentRoomX + 1];
+      currentRoomX += 1;
+      return updateRoom();
    }
 
    public Room moveLeft(){
-      return currentRoom = floor[currentRoomY][currentRoomX - 1];
+      currentRoomX -= 1;
+      return updateRoom();
    }
 
    public Room moveUp(){
-      return currentRoom = floor[currentRoomY + 1][currentRoomX];
+      currentRoomY -= 1;
+      return updateRoom();
    }
 
    public Room moveDown(){
-      return currentRoom = floor[currentRoomY - 1][currentRoomX];
+      currentRoomY += 1;
+      return updateRoom();
    }
 
+
+   private Room updateRoom(){
+      return currentRoom = floor[currentRoomY][currentRoomX];
+   }
 
 
    public void lookForStartingRoom(){
@@ -107,3 +116,7 @@ public class Floor {
 
 
 }
+
+//public interface Rodom{
+
+//}
