@@ -7,8 +7,23 @@ import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
 public class PlayerController {
+
+   private Floor floor;
+   private Room startingRoom;
+
+
+
+
+   public PlayerController(Floor currentFloor, Room startingRoom){
+      this.floor = currentFloor;
+      this.startingRoom = startingRoom;
+
+   }
+
+
+
    
-   Floor floor = new Floor();
+
    
    public void start(){
 
@@ -16,8 +31,10 @@ public class PlayerController {
       
       int playerHp = 100;
 
-      floor.lookForStartingRoom();
+      Room CurrentRoom = floor.lookForStartingRoom(startingRoom);
+      
       Room startingRoom = floor.getCurrentRoom();
+      
       startingRoom.print();
 
 

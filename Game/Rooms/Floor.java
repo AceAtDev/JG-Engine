@@ -7,7 +7,7 @@ public class Floor {
 
 
    
-   
+   /* 
    private Room fourDirectionRoom = new Room();
    private Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP
 
@@ -23,7 +23,7 @@ public class Floor {
 
    private Room threeGatesLeftUpDown = new Room(false,true,true,true);
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
-   
+   */
 
 
 
@@ -32,13 +32,14 @@ public class Floor {
    public int currentRoomY = 0;
    
 
-   private Room[][] floor = 
-   {
-      {null,         oneGateDown,        oneGateDown,           oneGateDown},
-      {oneGateRight, startingRoom, threeGatesLeftUpRight , twoGatesUpLeft},
-      {null,         oneGateUp,        null,            null},
-   };
+   private Room[][] floor;
+   
 
+
+
+   public Floor(Room[][] arrayOfRooms){
+      this.floor = arrayOfRooms;
+   }
 
 
    public Room[][] getFloor(){
@@ -97,7 +98,7 @@ public class Floor {
    }
 
 
-   public void lookForStartingRoom(){
+   public Room lookForStartingRoom(Room startingRoom){
 
       for(int y = 0; y < floor.length; y++){
          for(int x = 0; x < floor.length; x++){
@@ -105,10 +106,12 @@ public class Floor {
                currentRoomX = x;
                currentRoomY = y;
                currentRoom = startingRoom;
+               return currentRoom;
             }
          }
       }
 
+      throw new IllegalStateException("could not find starting Room");
    }
 
 
