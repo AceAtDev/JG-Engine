@@ -34,7 +34,7 @@ public class GameWindow extends JPanel implements Runnable {
    }
 
 
-   // thie method will be called every thread fream, Void Update
+   // thie method will be called every thread fream, likr Void Update in unity
    @Override
    public void run() {
       // To Do: create the game loop
