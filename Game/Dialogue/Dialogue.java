@@ -1,26 +1,18 @@
 package Game.Dialogue;
 
-import java.util.Queue;
+import External.Tools;
 
 public class Dialogue {
 
-   /* 
-   
-   private String dialogueText;
-   
-   Queue<String> sentences;
+   public void dialogPrinit(String sentences) throws InterruptedException{
+      char[] senChar = sentences.toCharArray();
 
-   //String sentences;
-
-   public void startDialogue(){
-      sentences = null;
-
-      for(String s : sentences){
-         sentences.Enqueue(s);
+      for(int i = 0; i < senChar.length; i++){
+         System.out.print(senChar[i]);
+         Tools.delayer(40);
       }
+
+      System.out.println("");
    }
 
-   IEnumerator typeOfSentences()
-
-   */
 }
