@@ -114,11 +114,20 @@ public class Room implements RoomTemplates {
          return;
       }
       if(!right && !left && up && down ){ // up - down
-         RoomTemplates.twoGatesUpRight();
+         RoomTemplates.twoGatesUpDown();
          return;
       }
 
+      /* 
+      if(right && left && !up && down){ // right - left
+         t
+         return;
+      }
+      if(!right && !left && up && down){ // down - up
 
+         return;
+      }
+      */
 
       if(right  && left  && up && !down ){ // right - left - up
          RoomTemplates.threeGatesLeftRightUp();

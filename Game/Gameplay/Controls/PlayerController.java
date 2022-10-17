@@ -5,11 +5,10 @@ import External.Tools;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
-public class PlayerController extends PlayerBattleController{
+public class PlayerController extends PlayerBattleController{ // this class should not be created but once
 
    private Floor floor;
    private Room startingRoom;
-
 
 
    public PlayerController(Floor currentFloor, Room startingRoom){
@@ -26,8 +25,6 @@ public class PlayerController extends PlayerBattleController{
 
       GameStates gs = GameStates.WANDERING;
       
-      
-
       Room currentRoom = floor.lookForStartingRoom(startingRoom);
       currentRoom.print();
       
@@ -51,8 +48,8 @@ public class PlayerController extends PlayerBattleController{
       
       Room currentRoom = floor.getCurrentRoom();
 
-      System.out.println("X-pos " + floor.currentRoomX);
-      System.out.println("Y-pos " + floor.currentRoomY);
+      System.out.println("X-pos " + floor.currentRoomX); // delete after finishing builiding
+      System.out.println("Y-pos " + floor.currentRoomY); // delete after finishing builiding
 
 
       int playerChose = Tools.AskInt("Where do you wish to go? \n" + 

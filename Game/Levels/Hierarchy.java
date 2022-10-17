@@ -4,9 +4,9 @@ import Game.Enemies.Enemy;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
-public class Hicrocy {
+public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy();
+   Enemy notCubeL1 = new Enemy(100,12,5);
 
 
    
@@ -21,7 +21,9 @@ public class Hicrocy {
    private Room twoGatesDownRight = new Room(true,false,false,true);
    private Room twoGatesDownLeft = new Room(false,true,false,true);
    private Room twoGatesUpLeft = new Room(false,true,true,false);
-
+   private Room twoGatesRightLeft = new Room(true,true,false, false);
+   private Room twoGatesDownUp = new Room(false,false,true, true);
+   
    private Room threeGatesLeftUpDown = new Room(false,true,true,true);
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
 
@@ -31,9 +33,11 @@ public class Hicrocy {
 
    // do mapping here
    private Room[][] baseFloor = { 
-      {null, oneGateDown, null},
+      {null, twoGatesDownRight,  twoGatesRightLeft, oneGateLeft},
+      {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
       {null, oneGateUp, null},
+      
    };
 
 

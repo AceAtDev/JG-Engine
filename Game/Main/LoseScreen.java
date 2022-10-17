@@ -14,12 +14,12 @@ public class LoseScreen {
       for (int i = 0; i < 150; i++){
          int losingEffect = rand.nextInt(100000000);
          Tools.delayer(20);
-         System.out.println(losingEffect);
+         System.out.println(losingEffect + losingEffect + losingEffect);
       }
 
-      System.out.println("YOU DED");
       Tools.delayer(1500);
-      System.out.println("lol");
+      System.out.println("YOU DIED");
+      System.out.println("AND YOU HAVE LOST YOUR CHANCE IN FIND WEALTH");
 
       System.exit(0);
 

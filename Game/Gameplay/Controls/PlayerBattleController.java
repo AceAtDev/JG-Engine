@@ -5,39 +5,37 @@ import Game.Dialogue.Dialogue;
 
 public class PlayerBattleController {
    
-   private static final int playerHp = 100;
-   protected static int currentPlayerHP = playerHp;
-   private int damage = 15;
+   private static final int playerHP = 100;
+   
+   private static int currentPlayerHP;
+   private static int damage = 15;
+   private static boolean isDeffending = false;
 
-
-   public void playerchoses(int chose, int enemyHP) {
-      switch(chose){
-         case 1:
-         // play damage audio
-         enemyHP = doDamage(enemyHP);
-         break;
-
-         case 2:
-         break;
-         default:
-         Dialogue.dialogprint("You have chose none of the options given... for that you're turn is gone for this round :)");
-         Tools.delayer(1000);
-         System.out.println("LOL");
-      }
-   }
 
    public static int getCurrentHP(){
+      if(currentPlayerHP <= 0){
+         return playerHP;
+      }
       return currentPlayerHP;
    }
 
+   public static void setCurrentHp(int hp){
+      currentPlayerHP = hp;
+   }
 
-   public int doDamage(int enemyHP) {
+
+   public static int doDamage(int enemyHP) {
       enemyHP -= damage;
       return enemyHP;
    }
 
-   public boolean dodgerAttack(){
-      return true;
+   public static boolean setDodgeAttack(boolean state){
+      isDeffending = state;
+      return isDeffending;
+   }
+
+   public static boolean isDodgeAttack(){
+      return isDeffending;
    }
 
    

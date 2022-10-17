@@ -93,7 +93,7 @@ public class Floor {
    public Room lookForStartingRoom(Room startingRoom){
 
       for(int y = 0; y < floor.length; y++){
-         for(int x = 0; x < floor.length; x++){
+         for(int x = 0; x < floor[0].length - 1; x++){
             if(floor[y][x] == startingRoom){
                currentRoomX = x;
                currentRoomY = y;

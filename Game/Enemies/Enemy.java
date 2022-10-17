@@ -16,6 +16,9 @@ public class Enemy implements EnemyTemplates {
    protected int hp = 20;
    protected int deffence = 1;
 
+   private int damageMultiplier = 4;
+   boolean warnedPlayer = false;
+
 
    public Enemy(){
 
@@ -43,7 +46,6 @@ public class Enemy implements EnemyTemplates {
 
 
       // play audio
-      PlayerBattleController pbc = new PlayerBattleController();
       int currentPlayerHP = playerHP;
       int currentEnemyHP = hp;
       while(currentPlayerHP > 0){
@@ -59,26 +61,31 @@ public class Enemy implements EnemyTemplates {
          switch(playerChose){
             case 1:
             // play damage audio
-            currentEnemyHP = pbc.doDamage(currentEnemyHP);
+            currentEnemyHP = PlayerBattleController.doDamage(currentEnemyHP);
             break;
    
             case 2:
+            PlayerBattleController.setDodgeAttack(true);
+
             break;
             default:
             Dialogue.dialogprint("You have chose none of the options given... for that you're turn is gone for this round :)");
-            Tools.delayer(1000);
+            Tools.delayer(1500);
             System.out.println("LOL");
          }
 
 
+
          if(currentEnemyHP <= 0){
-            Tools.ClearConsole();
-            // player audio victory
             currentPlayerHP += 10;
+            PlayerBattleController.setCurrentHp(currentPlayerHP); // Update player's hp
+            Tools.ClearConsole();
+            // play audio victory
             System.out.println("YOU WON! YOU HAVE RESTORED 10 HEALH POINTS!");
             Tools.AskString("Press Enter to continue");
             return;
          }
+         
 
          currentPlayerHP = enemyTurn(currentPlayerHP); // damage player
 
@@ -91,18 +98,52 @@ public class Enemy implements EnemyTemplates {
    
    Random rand = new Random();
    private int enemyTurn(int playerHP){
-      int specialAttack = rand.nextInt(3);
-      boolean canSA = specialAttack == 1;
-      boolean warnPlayer = false;
+      int specialAttack = rand.nextInt(4);
+      boolean canSA;
 
-      Tools.delayer(1250);
-
-      if(canSA){
-         System.out.println("sp!");
+      if(specialAttack == 1){
+         canSA = true;
+      }
+      else{
          canSA = false;
       }
 
+      Tools.delayer(1250);
+
+      if(warnedPlayer == true){
+         warnedPlayer = false;
+         canSA = false;
+
+         Dialogue.dialogprint(name + " has used their special attack");
+         // play audio special attack
+         
+
+         Tools.delayer(1250);
+         if(PlayerBattleController.isDodgeAttack() == true){// player dodged special attack
+            
+            // play audio special attack deffend
+
+            Dialogue.dialogprint("However, You dodged the attack!");
+            Tools.delayer(1000);
+            
+
+            PlayerBattleController.setDodgeAttack(false);
+            return playerHP;
+         }
+
+         return specialAttack(playerHP);
+      }
+
+      if(canSA){
+         Dialogue.dialogprint(name + " is preparing to use their special attack the next round, you should deffend yourself");
+         Tools.delayer(1000);
+         warnedPlayer = true;
+         canSA = false;
+         return playerHP;
+      }
+
       System.out.println(name + " decided to attack!");
+      PlayerBattleController.setDodgeAttack(false);
       Tools.delayer(750);
       // play damage audio
       return attack(playerHP);
@@ -112,10 +153,18 @@ public class Enemy implements EnemyTemplates {
 
 
 
+
+
    private int attack(int playerHP){
       playerHP -= damage; 
       return playerHP;
    }
+
+   private int specialAttack(int playerHP){
+      playerHP -= damage * damageMultiplier;
+      return playerHP;
+   }
+
 
 
    private void print(){
