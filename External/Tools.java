@@ -135,8 +135,15 @@ public class Tools{
    }
 
    // frezze the code for a period of seconds
-   public static void delayer (long time) throws InterruptedException {
-      Thread.sleep(time);
+   public static void delayer (long time) {
+      
+      try{
+         Thread.sleep(time);
+      }
+      catch (InterruptedException e) {
+         Thread.currentThread().interrupt();
+      }
+      
    }
    
 }

@@ -15,9 +15,12 @@ class Main{
       Tools.ClearConsole();
       //Tools.delayer(1500);
 
+      
+
       //Title.draw();
 
-      Level1 first = new Level1();
+      Level1 firstLevel = new Level1();
+      firstLevel.start();
 
       //PlayerController PC = new PlayerController();
       //PC.start();

@@ -1,19 +1,16 @@
 package Game.Rooms;
 
+import Game.Enemies.Enemy;
+import Game.Gameplay.Controls.PlayerController;
+
 public class Room implements RoomTemplates {
    
-
-
-
-   //protected int up = 1;
-   //protected int right = 2;
-   //protected int left = 3;
-   //protected int down = 4;
 
    protected boolean right = true;
    protected boolean left = true;
    protected boolean up = true;
    protected boolean down = true;
+   protected Enemy doesContainEnemy;
 
 
    //private int id;
@@ -43,6 +40,19 @@ public class Room implements RoomTemplates {
       this.down = down;
       this.left = left;
 
+   }
+
+   public Room(boolean right, boolean left, boolean up, boolean down, 
+   Enemy enemy){ // A room with an enemy inside
+      this.up = up;
+      this.right = right;
+      this.down = down;
+      this.left = left;
+      this.doesContainEnemy = enemy;
+   }
+
+   public void callEnemy(){
+      doesContainEnemy.enemyChallenged(PlayerController.getCurrentHP());
    }
 
 
@@ -145,8 +155,6 @@ public class Room implements RoomTemplates {
 
    }
  
-
-
 
 
 }

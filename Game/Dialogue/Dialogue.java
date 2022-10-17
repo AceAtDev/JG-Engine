@@ -4,12 +4,12 @@ import External.Tools;
 
 public class Dialogue {
 
-   public void dialogPrinit(String sentences) throws InterruptedException{
+   public static void dialogprint(String sentences) {
       char[] senChar = sentences.toCharArray();
 
       for(int i = 0; i < senChar.length; i++){
          System.out.print(senChar[i]);
-         Tools.delayer(40);
+         Tools.delayer(43);
       }
 
       System.out.println("");

@@ -1,16 +1,14 @@
 package Game.Gameplay.Controls;
 
-import java.io.Serializable;
 
 import External.Tools;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
-public class PlayerController {
+public class PlayerController extends PlayerBattleController{
 
    private Floor floor;
    private Room startingRoom;
-
 
 
 
@@ -23,35 +21,33 @@ public class PlayerController {
 
 
    
-
-   
    public void start(){
+
 
       GameStates gs = GameStates.WANDERING;
       
-      int playerHp = 100;
-
-      Room CurrentRoom = floor.lookForStartingRoom(startingRoom);
       
-      Room startingRoom = floor.getCurrentRoom();
+
+      Room currentRoom = floor.lookForStartingRoom(startingRoom);
+      currentRoom.print();
       
-      startingRoom.print();
 
+      while (getCurrentHP() > 0){
 
-
-      while(gs == GameStates.WANDERING){
-         
-         navigateRooms();
+         if ( gs == GameStates.WANDERING){
+            navigateRooms();
+         }
 
 
       }
+
      
-      throw new IllegalArgumentException("You shouldn't get to this message unless you're dead and Game STATE is LOSE");
+      throw new IllegalArgumentException("You shouldn't be here");
      
    }
 
    
-   void navigateRooms(){
+   private void navigateRooms(){
       
       Room currentRoom = floor.getCurrentRoom();
 
@@ -75,12 +71,12 @@ public class PlayerController {
          currentRoom.print();
       }
 
-      if(playerChose == 3 && currentRoom.getRoomExitUp()){
+      if(playerChose == 3 && currentRoom.getRoomExitUp()){ // there is an exit to the up
          currentRoom = floor.moveUp();
          currentRoom.print();
       }
 
-      if(playerChose == 4 && currentRoom.getRoomExitDown()){
+      if(playerChose == 4 && currentRoom.getRoomExitDown()){ // there is an exit to the down
          currentRoom = floor.moveDown();
          currentRoom.print();
       }
