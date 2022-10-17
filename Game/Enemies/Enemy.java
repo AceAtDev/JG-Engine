@@ -39,7 +39,7 @@ public class Enemy implements EnemyTemplates {
 
       Tools.delayer(750);
       Dialogue.dialogprint("An enemy had blooked you way");
-      Tools.delayer(1000);
+      Tools.delayer(1750);
 
 
       // play audio
