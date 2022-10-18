@@ -13,10 +13,10 @@ import javax.sound.sampled.Clip;
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[30];
+   URL soundURL[] = new URL[9];
 
    public Audio() {
-      soundURL[0] = getClass().getResource(null); // Write sound place in your folders
+      soundURL[0] = getClass().getResource("/files/Violet Stars - OST.wav"); // Write sound place in your folders
    }
 
    public void setFile(int fileIndex) {
@@ -43,5 +43,6 @@ public class Audio {
       clip.stop();
    }
 
+   // to do: make a stop all music method
    
 }
