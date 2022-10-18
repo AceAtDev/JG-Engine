@@ -1,6 +1,8 @@
 package Game.Gameplay.audio;
 
-public class SoundManager {
+import javax.sound.sampled.AudioSystem;
+
+public class SoundManager{
    
    private static Audio sounds = new Audio();
 
@@ -19,12 +21,12 @@ public class SoundManager {
       sounds.play();
    }
 
-   /* 
+   
    public static void allStopMusic(){
-      for (int i = 0; i < sounds.soundURL.length; i++){
-         sounds.soundURL[i].
-         
+      for (int i = 0; i < sounds.soundURL.length - 1; i++){
+         sounds.setFile(i);
+         sounds.stop();
       }
    }
-   */
+   
 }

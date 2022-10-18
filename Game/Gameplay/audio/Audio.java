@@ -13,10 +13,15 @@ import javax.sound.sampled.Clip;
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[9];
+   URL soundURL[] = new URL[6];
 
    public Audio() {
-      soundURL[0] = getClass().getResource("/files/Violet Stars - OST.wav"); // Write sound place in your folders
+      soundURL[0] = getClass().getResource("./files/Violet Stars - battle.wav"); // Write sound place in your folders
+      soundURL[1] = getClass().getResource("./files/Violet Stars - OST.wav");
+      soundURL[2] = getClass().getResource("./files/lose sound start.wav");
+      soundURL[3] = getClass().getResource("./files/lose sound 2.wav");
+      soundURL[4] = getClass().getResource("./files/talk SFX.wav");
+
    }
 
    public void setFile(int fileIndex) {
@@ -43,6 +48,5 @@ public class Audio {
       clip.stop();
    }
 
-   // to do: make a stop all music method
-   
+
 }

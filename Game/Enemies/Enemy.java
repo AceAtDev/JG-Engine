@@ -6,6 +6,7 @@ import java.util.Random;
 import External.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.Controls.PlayerBattleController;
+import Game.Gameplay.audio.SoundManager;
 import Game.Main.LoseScreen;
 import Game.Rooms.Room;
 
@@ -48,6 +49,8 @@ public class Enemy implements EnemyTemplates {
       // play audio
       int currentPlayerHP = playerHP;
       int currentEnemyHP = hp;
+      SoundManager.allStopMusic();
+      SoundManager.playMusic(0);
       while(currentPlayerHP > 0){
          
          
