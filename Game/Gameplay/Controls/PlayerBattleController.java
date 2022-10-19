@@ -10,6 +10,7 @@ public class PlayerBattleController {
    private static int currentPlayerHP;
    private static int damage = 15;
    private static boolean isDeffending = false;
+   private static int deffence = 2;
 
 
    public static int getCurrentHP(){
@@ -36,6 +37,15 @@ public class PlayerBattleController {
 
    public static boolean isDodgeAttack(){
       return isDeffending;
+   }
+
+   public static int getDeffence(){
+      return deffence;
+   }
+
+   public static int setDeffence(int value) {
+      deffence = value;
+      return deffence;
    }
 
    

@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[6];
+   URL soundURL[] = new URL[9];
 
    public Audio() {
       soundURL[0] = getClass().getResource("./files/Violet Stars - battle.wav"); // Write sound place in your folders
@@ -21,6 +21,12 @@ public class Audio {
       soundURL[2] = getClass().getResource("./files/lose sound start.wav");
       soundURL[3] = getClass().getResource("./files/lose sound 2.wav");
       soundURL[4] = getClass().getResource("./files/talk SFX.wav");
+      soundURL[5] = getClass().getResource("./files/Encounter Full-HQ.wav");
+      soundURL[6] = getClass().getResource("./files/Soul Damaged-HQ.wav");
+      soundURL[7] = getClass().getResource("./files/Normal Attack-HQ.wav");
+      //soundURL[8] = getClass().getResource("./files/talk SFX.wav");
+
+      
 
    }
 

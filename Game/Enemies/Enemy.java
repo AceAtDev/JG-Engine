@@ -43,6 +43,7 @@ public class Enemy implements EnemyTemplates {
 
       Tools.delayer(750);
       Dialogue.dialogprint("An enemy had blooked you way");
+      SoundManager.playSE(5);
       Tools.delayer(1750);
 
 
@@ -80,12 +81,16 @@ public class Enemy implements EnemyTemplates {
 
 
          if(currentEnemyHP <= 0){
+            SoundManager.allStopMusic();
+            // play enemy death anaimation
+            // play victory sound
             currentPlayerHP += 10;
             PlayerBattleController.setCurrentHp(currentPlayerHP); // Update player's hp
             Tools.ClearConsole();
             // play audio victory
             System.out.println("YOU WON! YOU HAVE RESTORED 10 HEALH POINTS!");
             Tools.AskString("Press Enter to continue");
+            SoundManager.allStopMusic();
             return;
          }
          
@@ -101,11 +106,14 @@ public class Enemy implements EnemyTemplates {
    
    Random rand = new Random();
    private int enemyTurn(int playerHP){
-      int specialAttack = rand.nextInt(4);
-      boolean canSA;
+      int chances = rand.nextInt(6);
+      boolean canSA = false;
 
-      if(specialAttack == 1){
+      if(chances == 1){
          canSA = true;
+      }
+      if(chances  == 3){
+         abilty();
       }
       else{
          canSA = false;
@@ -155,11 +163,14 @@ public class Enemy implements EnemyTemplates {
    }
 
 
+   private void abilty(){
+
+   }
 
 
 
    private int attack(int playerHP){
-      playerHP -= damage; 
+      playerHP -= damage - PlayerBattleController.getDeffence(); 
       return playerHP;
    }
 
