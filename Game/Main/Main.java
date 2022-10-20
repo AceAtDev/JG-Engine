@@ -10,12 +10,12 @@ import Game.Rooms.Floor;
 
 class Main{
    
-   public static void main(String[] args) throws InterruptedException{
+   public static void main(String[] args){
 
       Tools.ClearConsole();
       //Tools.delayer(1500);
 
-      //LoseScreen.playLoseScreen();
+      LoseScreen.playLoseScreen();
 
       //Title.draw();
 

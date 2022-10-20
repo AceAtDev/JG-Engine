@@ -3,6 +3,7 @@ package External;
 // Note: every function here is independed and only require to be called and input values.
 
 
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -144,6 +145,12 @@ public class Tools{
          Thread.currentThread().interrupt();
       }
       
+   }
+
+   // roll a random number number
+   public static int randomNumRoller(int maxNumber) {
+      Random rand = new Random();
+      return rand.nextInt(maxNumber);
    }
    
 }

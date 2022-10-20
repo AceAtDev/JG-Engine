@@ -21,6 +21,10 @@ public class SoundManager{
       sounds.play();
    }
 
+   public static void manualMusicStop(int i){
+      sounds.setFile(i);
+      sounds.stop();
+   }
    
    public static void allStopMusic(){
       for (int i = 0; i < sounds.soundURL.length - 1; i++){

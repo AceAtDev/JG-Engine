@@ -81,7 +81,7 @@ public class Enemy implements EnemyTemplates {
 
 
          if(currentEnemyHP <= 0){
-            SoundManager.allStopMusic();
+            SoundManager.manualMusicStop(0);
             // play enemy death anaimation
             // play victory sound
             currentPlayerHP += 10;
@@ -106,14 +106,14 @@ public class Enemy implements EnemyTemplates {
    
    Random rand = new Random();
    private int enemyTurn(int playerHP){
-      int chances = rand.nextInt(6);
+      int chances = rand.nextInt(5);
       boolean canSA = false;
 
       if(chances == 1){
          canSA = true;
       }
-      if(chances  == 3){
-         abilty();
+      if(chances  == 3 || chances == 4){
+         abilty(chances);
       }
       else{
          canSA = false;
@@ -142,6 +142,7 @@ public class Enemy implements EnemyTemplates {
             return playerHP;
          }
 
+         SoundManager.playSE(6);
          return specialAttack(playerHP);
       }
 
@@ -163,7 +164,19 @@ public class Enemy implements EnemyTemplates {
    }
 
 
-   private void abilty(){
+   private void abilty(int chance){
+
+      if(chance == 4){
+         damage = damage * 2;
+         Dialogue.dialogprint(name + " drunk a red lucid... " + name + "'s damage increased by x2");
+         Tools.delayer(1000);
+         return;
+      }
+
+      Dialogue.dialogprint(name + " wore iron armor! " + name + "'s deffence increased by x2");
+      Tools.delayer(500);
+      Dialogue.dialogprint("However," + name + "is looking kinda mincrafty ");
+      Tools.delayer(1000);
 
    }
 

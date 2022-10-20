@@ -38,6 +38,7 @@ public class Hierarchy {
       {oneGateRight, startingRoom, oneGateLeft},
       {null, oneGateUp, null},
       
+      
    };
 
 

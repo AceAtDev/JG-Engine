@@ -1,7 +1,9 @@
 package Game.Gameplay.Controls;
 
+
 import External.Tools;
 import Game.Dialogue.Dialogue;
+import Game.Gameplay.audio.SoundManager;
 
 public class PlayerBattleController {
    
@@ -9,6 +11,7 @@ public class PlayerBattleController {
    
    private static int currentPlayerHP;
    private static int damage = 15;
+   private static int damageMultiplier = 1;
    private static boolean isDeffending = false;
    private static int deffence = 2;
 
@@ -25,8 +28,22 @@ public class PlayerBattleController {
    }
 
 
+   
    public static int doDamage(int enemyHP) {
+      int bounsDamageChance = Tools.randomNumRoller(3);
+      if(bounsDamageChance == 1){
+         Dialogue.dialogprint("YOU HIT A CRIT HIT!");
+         //play crit hit sfx
+         Tools.delayer(500);
+         return bounsDamage(enemyHP);
+      }
+      SoundManager.playSE(7);
       enemyHP -= damage;
+      return enemyHP;
+   }
+
+   private static int bounsDamage(int enemyHP) {
+      enemyHP -= damage * damageMultiplier;
       return enemyHP;
    }
 
@@ -48,5 +65,5 @@ public class PlayerBattleController {
       return deffence;
    }
 
-   
+
 }

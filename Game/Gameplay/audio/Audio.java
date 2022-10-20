@@ -9,11 +9,11 @@ import javax.sound.sampled.Clip;
 
 // |AudioSystem and controllor|
 // I adivse to make another script and creating this object inside that script
-// by that, you could name you sound effects and music instated of calling tham by indexs
+// by that, you could make a ststic meathods
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[9];
+   URL soundURL[] = new URL[8];
 
    public Audio() {
       soundURL[0] = getClass().getResource("./files/Violet Stars - battle.wav"); // Write sound place in your folders
@@ -25,8 +25,6 @@ public class Audio {
       soundURL[6] = getClass().getResource("./files/Soul Damaged-HQ.wav");
       soundURL[7] = getClass().getResource("./files/Normal Attack-HQ.wav");
       //soundURL[8] = getClass().getResource("./files/talk SFX.wav");
-
-      
 
    }
 
@@ -53,6 +51,7 @@ public class Audio {
    public void stop(){
       clip.stop();
    }
+
 
 
 }
