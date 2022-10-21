@@ -15,7 +15,7 @@ class Main{
       Tools.ClearConsole();
       //Tools.delayer(1500);
 
-      LoseScreen.playLoseScreen();
+      //LoseScreen.playLoseScreen();
 
       //Title.draw();
 

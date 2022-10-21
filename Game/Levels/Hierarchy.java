@@ -1,5 +1,6 @@
 package Game.Levels;
 
+import Game.Enemies.Boss;
 import Game.Enemies.Enemy;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
@@ -7,6 +8,7 @@ import Game.Rooms.Room;
 public class Hierarchy {
 
    Enemy notCubeL1 = new Enemy(100,12,5);
+   Enemy estran = new Boss("estran",100,12,12,1);
 
 
    
@@ -28,12 +30,15 @@ public class Hierarchy {
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
 
 
+   private Room bossRoom = new Room(true, false,false,false, estran);
+
+
    protected Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP
 
 
    // do mapping here
    private Room[][] baseFloor = { 
-      {null, twoGatesDownRight,  twoGatesRightLeft, oneGateLeft},
+      {null, twoGatesDownRight,  twoGatesRightLeft, bossRoom},
       {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
       {null, oneGateUp, null},

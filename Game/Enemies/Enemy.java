@@ -12,10 +12,12 @@ import Game.Rooms.Room;
 
 public class Enemy implements EnemyTemplates {
 
+
    protected String name = "Not Cube";
    protected int damage = 5;
    protected int hp = 20;
    protected int deffence = 1;
+   protected int rank;
 
    private int damageMultiplier = 4;
    boolean warnedPlayer = false;
@@ -195,6 +197,11 @@ public class Enemy implements EnemyTemplates {
 
 
    private void print(){
+
+      if(rank != 1){
+         EnemyTemplates.estran();
+         return;
+      }
 
       EnemyTemplates.notCube();
    }

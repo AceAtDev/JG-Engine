@@ -63,21 +63,25 @@ public class PlayerController extends PlayerBattleController{ // this class shou
          currentRoom.print();
       }
 
-      if(playerChose == 2 && currentRoom.getRoomExitLeft()){ // there is an exit to the left
+      else if(playerChose == 2 && currentRoom.getRoomExitLeft()){ // there is an exit to the left
          currentRoom = floor.moveLeft();
          currentRoom.print();
       }
 
-      if(playerChose == 3 && currentRoom.getRoomExitUp()){ // there is an exit to the up
+      else if(playerChose == 3 && currentRoom.getRoomExitUp()){ // there is an exit to the up
          currentRoom = floor.moveUp();
          currentRoom.print();
       }
 
-      if(playerChose == 4 && currentRoom.getRoomExitDown()){ // there is an exit to the down
+      else if(playerChose == 4 && currentRoom.getRoomExitDown()){ // there is an exit to the down
          currentRoom = floor.moveDown();
          currentRoom.print();
       }
 
+      else {
+         currentRoom.print();
+         System.out.println("Can't go that direction");
+      }
    
    }
 
