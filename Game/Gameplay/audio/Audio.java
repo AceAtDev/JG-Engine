@@ -12,11 +12,14 @@ import javax.sound.sampled.Clip;
 // by that, you could make a ststic meathods
 public class Audio {
 
-   Clip clip;
+   protected static Clip clip;
    URL soundURL[] = new URL[8];
 
+   //AudioClip ac = getAudioClip(getCodeBase(), soundFile);
+
    public Audio() {
-      soundURL[0] = getClass().getResource("./files/Violet Stars - battle.wav"); // Write sound place in your folders
+      // Write sound place in getResource("")
+      soundURL[0] = getClass().getResource("./files/Violet Stars - battle.wav");
       soundURL[1] = getClass().getResource("./files/Violet Stars - OST.wav");
       soundURL[2] = getClass().getResource("./files/lose sound start.wav");
       soundURL[3] = getClass().getResource("./files/lose sound 2.wav");
