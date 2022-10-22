@@ -54,9 +54,7 @@ public class Enemy implements EnemyTemplates {
       int currentPlayerHP = playerHP;
       int currentEnemyHP = hp;
       // stop WANDERING music
-      //MusicManager.stopMusic();
-      //MusicManager.playMusic(0);
-      //MusicManager.transformFromCurrentMusicToOther(0);
+      MusicManager.transformFromCurrentMusicToOther(0);
       while(currentPlayerHP > 0){
          
          
@@ -71,7 +69,7 @@ public class Enemy implements EnemyTemplates {
          switch(playerChose){
             case 1:
             // play damage audio
-            currentEnemyHP = PlayerBattleController.doDamage(currentEnemyHP);
+            currentEnemyHP = PlayerBattleController.doDamage(currentEnemyHP) + deffence;
             break;
    
             case 2:

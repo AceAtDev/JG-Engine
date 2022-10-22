@@ -12,7 +12,7 @@ import javax.sound.sampled.Clip;
 // by that, you could make a ststic meathods
 public class Audio {
 
-   protected static Clip clip;
+   Clip clip;
    URL soundURL[] = new URL[8];
 
    //AudioClip ac = getAudioClip(getCodeBase(), soundFile);
@@ -52,6 +52,9 @@ public class Audio {
    }
 
    public void stop(){
+      if(clip == null){
+         return;
+      }
       clip.stop();
    }
 
