@@ -6,6 +6,7 @@ import java.util.Random;
 import External.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.Controls.PlayerBattleController;
+import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 import Game.Main.LoseScreen;
 import Game.Rooms.Room;
@@ -43,7 +44,7 @@ public class Enemy implements EnemyTemplates {
 
    public void enemyChallenged(int playerHP) {
 
-      Tools.delayer(750);
+      Tools.delayer(500);
       Dialogue.dialogprint("An enemy had blooked you way");
       SoundManager.playSE(5);
       Tools.delayer(1750);
@@ -52,8 +53,10 @@ public class Enemy implements EnemyTemplates {
       // play audio
       int currentPlayerHP = playerHP;
       int currentEnemyHP = hp;
-      SoundManager.allStopMusic();
-      SoundManager.playMusic(0);
+      // stop WANDERING music
+      //MusicManager.stopMusic();
+      //MusicManager.playMusic(0);
+      //MusicManager.transformFromCurrentMusicToOther(0);
       while(currentPlayerHP > 0){
          
          
@@ -61,7 +64,8 @@ public class Enemy implements EnemyTemplates {
          System.out.println(name + " is blooking your way!");
          System.out.println(name + " HP's: " + currentEnemyHP);
          System.out.println("Your HP: " + currentPlayerHP);
-         int playerChose = Tools.AskInt("1: Attack\n" +
+         int playerChose = Tools.AskInt(
+         "1: Attack\n" +
          "2: Deffend");
          
          switch(playerChose){
@@ -76,14 +80,14 @@ public class Enemy implements EnemyTemplates {
             break;
             default:
             Dialogue.dialogprint("You have chose none of the options given... for that you're turn is gone for this round :)");
-            Tools.delayer(1500);
+            Tools.delayer(1000);
             System.out.println("LOL");
          }
 
 
 
          if(currentEnemyHP <= 0){
-            SoundManager.manualMusicStop(0);
+            MusicManager.stopMusic();
             // play enemy death anaimation
             // play victory sound
             currentPlayerHP += 10;
@@ -92,7 +96,6 @@ public class Enemy implements EnemyTemplates {
             // play audio victory
             System.out.println("YOU WON! YOU HAVE RESTORED 10 HEALH POINTS!");
             Tools.AskString("Press Enter to continue");
-            SoundManager.allStopMusic();
             return;
          }
          
@@ -108,7 +111,7 @@ public class Enemy implements EnemyTemplates {
    
    Random rand = new Random();
    private int enemyTurn(int playerHP){
-      int chances = rand.nextInt(5);
+      int chances = rand.nextInt(6);
       boolean canSA = false;
 
       if(chances == 1){
@@ -121,7 +124,7 @@ public class Enemy implements EnemyTemplates {
          canSA = false;
       }
 
-      Tools.delayer(1250);
+      Tools.delayer(1000);
 
       if(warnedPlayer == true){
          warnedPlayer = false;
@@ -150,7 +153,7 @@ public class Enemy implements EnemyTemplates {
 
       if(canSA){
          Dialogue.dialogprint(name + " is preparing to use their special attack the next round, you should deffend yourself");
-         Tools.delayer(1000);
+         Tools.delayer(750);
          warnedPlayer = true;
          canSA = false;
          return playerHP;
@@ -175,10 +178,10 @@ public class Enemy implements EnemyTemplates {
          return;
       }
 
-      Dialogue.dialogprint(name + " wore iron armor! " + name + "'s deffence increased by x2");
+      Dialogue.dialogprint(name + " wore an iron armor! " + name + "'s deffence increased by x2");
+      Tools.delayer(250);
+      Dialogue.dialogprint("However, " + name + " is looking kinda mincrafty ");
       Tools.delayer(500);
-      Dialogue.dialogprint("However," + name + "is looking kinda mincrafty ");
-      Tools.delayer(1000);
 
    }
 
@@ -198,7 +201,7 @@ public class Enemy implements EnemyTemplates {
 
    private void print(){
 
-      if(rank != 1){
+      if(rank == 1){
          EnemyTemplates.estran();
          return;
       }

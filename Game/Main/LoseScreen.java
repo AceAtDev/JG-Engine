@@ -3,13 +3,14 @@ package Game.Main;
 import java.util.Random;
 
 import External.Tools;
+import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 
 public class LoseScreen {
    
    public static void playLoseScreen(){
 
-      SoundManager.allStopMusic();
+      MusicManager.stopMusic();
       SoundManager.playSE(2);
       SoundManager.playSE(3);
       Random rand = new Random();

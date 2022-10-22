@@ -151,6 +151,7 @@ public class Tools{
    public static int randomNumRoller(int maxNumber) {
       Random rand = new Random();
       return rand.nextInt(maxNumber);
+      
    }
    
 }

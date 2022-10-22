@@ -1,0 +1,12 @@
+Hello Developer!
+
+This just a quick notes on how the audio works on this freamwork:
+
+So for some reason we can not really push on audio manager to control both SFX and the music. 
+the way we sovle this is by dividing the manager into two! that is why we have a class which control the sounds and
+one for the music.
+
+this my best solution is I could get to. feel free to change things according to what fits your needs, and if you
+found a better way to control both SFX and the music I would love to see! you can do that by requesting a pull request.
+
+Thank you for your time :)

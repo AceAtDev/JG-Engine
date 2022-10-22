@@ -1,18 +1,21 @@
 package Game.Gameplay.audio;
 
-import javax.sound.sampled.AudioSystem;
 
+
+
+// this class is should only be used for SFX and
 public class SoundManager{
    
    private static Audio sounds = new Audio();
 
-   public static void playMusic(int i){
+   // This is used only for the dialog sound; this meathod should only be used for one call and stop call
+   public static void playRepeative(int i){
       sounds.setFile(i);
       sounds.play();
       sounds.loop();
    }
 
-   public static void stopMusic(){
+   public static void stop(){
       sounds.stop();
    }
 
@@ -21,6 +24,7 @@ public class SoundManager{
       sounds.play();
    }
 
+   /* 
    public static void manualMusicStop(int i){
       sounds.setFile(i);
       sounds.stop();
@@ -32,5 +36,5 @@ public class SoundManager{
          sounds.stop();
       }
    }
-   
+   */
 }

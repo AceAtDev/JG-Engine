@@ -7,7 +7,7 @@ import Game.Rooms.Room;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(100,12,5);
+   Enemy notCubeL1 = new Enemy(30,12,5);
    Enemy estran = new Boss("estran",100,12,12,1);
 
 

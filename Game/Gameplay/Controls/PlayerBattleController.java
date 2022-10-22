@@ -11,9 +11,9 @@ public class PlayerBattleController {
    
    private static int currentPlayerHP;
    private static int damage = 15;
-   private static int damageMultiplier = 1;
+   private static int damageMultiplier = 2;
    private static boolean isDeffending = false;
-   private static int deffence = 2;
+   private static int deffence = 1;
 
 
    public static int getCurrentHP(){
@@ -28,22 +28,17 @@ public class PlayerBattleController {
    }
 
 
-   
    public static int doDamage(int enemyHP) {
-      int bounsDamageChance = Tools.randomNumRoller(3);
+      int bounsDamageChance = Tools.randomNumRoller(4);
+      SoundManager.playSE(7);
       if(bounsDamageChance == 1){
          Dialogue.dialogprint("YOU HIT A CRIT HIT!");
          //play crit hit sfx
-         Tools.delayer(500);
-         return bounsDamage(enemyHP);
+         Tools.delayer(250);
+         enemyHP -= damage * damageMultiplier;
+         return enemyHP;
       }
-      SoundManager.playSE(7);
       enemyHP -= damage;
-      return enemyHP;
-   }
-
-   private static int bounsDamage(int enemyHP) {
-      enemyHP -= damage * damageMultiplier;
       return enemyHP;
    }
 

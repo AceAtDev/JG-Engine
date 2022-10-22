@@ -7,13 +7,13 @@ public class Dialogue {
 
    public static void dialogprint(String sentences) {
       char[] senChar = sentences.toCharArray();
-      SoundManager.playMusic(4);
+      SoundManager.playRepeative(4);
       for(int i = 0; i < senChar.length; i++){
          System.out.print(senChar[i]);
          Tools.delayer(40);
       }
 
-      SoundManager.stopMusic();
+      SoundManager.stop();
       System.out.println("");
    }
 

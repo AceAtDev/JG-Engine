@@ -13,13 +13,13 @@ class Prototyping{
 
    static void example(String sentences) {
       char[] senChar = sentences.toCharArray();
-      SoundManager.playMusic(4);
+      SoundManager.playRepeative(4);
       for(int i = 0; i < senChar.length; i++){
          System.out.print(senChar[i]);
          Tools.delayer(30);
       }
 
       System.out.println("");
-      SoundManager.stopMusic();
+      SoundManager.stop();
    }
 }
