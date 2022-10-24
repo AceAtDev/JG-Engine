@@ -18,7 +18,7 @@ public class Enemy implements EnemyTemplates {
    protected int damage = 5;
    protected int hp = 20;
    protected int deffence = 1;
-   protected int rank;
+   protected int rank = 0;
 
    private int damageMultiplier = 4;
    boolean warnedPlayer = false;
@@ -161,6 +161,7 @@ public class Enemy implements EnemyTemplates {
       PlayerBattleController.setDodgeAttack(false);
       Tools.delayer(750);
       // play damage audio
+      SoundManager.playSE(6);
       return attack(playerHP);
       
 

@@ -7,8 +7,8 @@ import Game.Rooms.Room;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(30,12,5);
-   Enemy estran = new Boss("estran",100,12,12,1);
+   Enemy notCubeL1 = new Enemy(30,0,999);
+   Boss estran = new Boss("estran",100,1,12,1);
 
 
    
@@ -30,7 +30,7 @@ public class Hierarchy {
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
 
 
-   private Room bossRoom = new Room(true, false,false,false, estran);
+   private Room bossRoom = new Room(false, true,false,false, estran);
 
 
    protected Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP

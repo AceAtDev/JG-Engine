@@ -21,9 +21,6 @@ public class PlayerController extends PlayerBattleController{ // this class shou
 
    
    public void start(){
-
-
-      GameStates gs = GameStates.WANDERING;
       
       Room currentRoom = floor.lookForStartingRoom(startingRoom);
       currentRoom.print();
@@ -31,15 +28,13 @@ public class PlayerController extends PlayerBattleController{ // this class shou
 
       while (getCurrentHP() > 0){
 
-         if ( gs == GameStates.WANDERING){
-            navigateRooms();
-         }
+         navigateRooms();
 
 
       }
 
      
-      throw new IllegalArgumentException("You shouldn't be here");
+      throw new IllegalArgumentException("State out of bounds");
      
    }
 
