@@ -2,6 +2,7 @@ package Game.Gameplay.Controls;
 
 
 import External.Tools;
+import Game.Gameplay.audio.MusicManager;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
@@ -24,6 +25,8 @@ public class PlayerController extends PlayerBattleController{ // this class shou
       
       Room currentRoom = floor.lookForStartingRoom(startingRoom);
       currentRoom.print();
+
+      MusicManager.playMusic(8);
       
 
       while (getCurrentHP() > 0){

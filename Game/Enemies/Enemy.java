@@ -85,7 +85,7 @@ public class Enemy implements EnemyTemplates {
 
 
          if(currentEnemyHP <= 0){
-            MusicManager.stopMusic();
+            MusicManager.transformFromCurrentMusicToOther(8);
             // play enemy death anaimation
             // play victory sound
             currentPlayerHP += 10;

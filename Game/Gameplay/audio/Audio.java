@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[8];
+   URL soundURL[] = new URL[9];
 
    //AudioClip ac = getAudioClip(getCodeBase(), soundFile);
 
@@ -27,6 +27,7 @@ public class Audio {
       soundURL[5] = getClass().getResource("./files/Encounter Full-HQ.wav");
       soundURL[6] = getClass().getResource("./files/Soul Damaged-HQ.wav");
       soundURL[7] = getClass().getResource("./files/Normal Attack-HQ.wav");
+      soundURL[8] = getClass().getResource("./files/Celeste Original Soundtrack - 03 - Resurrections.wav");
       //soundURL[8] = getClass().getResource("./files/talk SFX.wav");
 
    }
