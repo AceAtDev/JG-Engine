@@ -3,6 +3,9 @@ package External.prototyping;
 import External.Tools;
 import Game.Gameplay.audio.SoundManager;
 
+// this just for testing purposes
+// please to refer to Game/Dialogue/Dialogue.java for the real script
+
 class Prototyping{
 
    public static void main(String[] args) {

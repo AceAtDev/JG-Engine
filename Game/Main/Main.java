@@ -3,9 +3,8 @@ package Game.Main;
 
 
 import External.Tools;
-import Game.Gameplay.Controls.PlayerController;
+import Game.Dialogue.Dialogue;
 import Game.Levels.Level1;
-import Game.Rooms.Floor;
 
 
 class Main{
@@ -13,19 +12,16 @@ class Main{
    public static void main(String[] args){
 
       Tools.ClearConsole();
-      //Tools.delayer(1500);
 
-      //LoseScreen.playLoseScreen();
-
-      //Title.draw();
+      Dialogue.dialogprint("Game uses music and sound.");
+      Tools.delayer(1250);
+      Dialogue.dialogprint("For better experience please rise the sound of you device");
+      Tools.delayer(2750);
+      Tools.ClearConsole();
 
       Level1 firstLevel = new Level1();
       firstLevel.start();
-
-      //PlayerController PC = new PlayerController();
-      //PC.start();
-
-        
+   
 
    }
 

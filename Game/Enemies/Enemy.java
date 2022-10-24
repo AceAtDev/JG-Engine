@@ -44,6 +44,7 @@ public class Enemy implements EnemyTemplates {
 
    public void enemyChallenged(int playerHP) {
 
+      MusicManager.stopMusic();
       Tools.delayer(500);
       Dialogue.dialogprint("An enemy had blooked you way");
       SoundManager.playSE(5);
