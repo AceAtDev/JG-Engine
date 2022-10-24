@@ -7,19 +7,19 @@ import Game.Rooms.Room;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(30,0,999);
+   Enemy notCubeL1 = new Enemy(30,0,4);
    Boss estran = new Boss("estran",100,1,12,1);
 
 
    
    private Room fourDirectionRoom = new Room();
 
-   private Room oneGateUp = new Room(false,false,true,false, notCubeL1);
+   private Room oneGateUp = new Room(false,false,true,false);
    private Room oneGateRight = new Room(true,false,false,false);
    private Room oneGateLeft = new Room(false,true,false,false);
    private Room oneGateDown = new Room(false,false,false,true);
 
-   private Room twoGatesUpRight = new Room(true,false,true,false);
+   private Room twoGatesUpRight = new Room(true,false,true,false, notCubeL1);
    private Room twoGatesDownRight = new Room(true,false,false,true);
    private Room twoGatesDownLeft = new Room(false,true,false,true);
    private Room twoGatesUpLeft = new Room(false,true,true,false);
@@ -41,7 +41,7 @@ public class Hierarchy {
       {null, twoGatesDownRight,  twoGatesRightLeft, bossRoom},
       {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
-      {null, oneGateUp, null},
+      {null, twoGatesUpRight, oneGateLeft},
       
       
    };
