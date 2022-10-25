@@ -9,7 +9,6 @@ import Game.Gameplay.Controls.PlayerBattleController;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 import Game.Main.LoseScreen;
-import Game.Rooms.Room;
 
 public class Enemy implements EnemyTemplates {
 
@@ -110,18 +109,18 @@ public class Enemy implements EnemyTemplates {
    
    Random rand = new Random();
    private int enemyTurn(int playerHP){
-      int chances = rand.nextInt(6);
+      int chances = rand.nextInt(8);
+      System.out.println(chances);
       boolean canSA = false;
 
-      if(chances == 1){
+      if(chances == 1 || chances == 2){
          canSA = true;
+
       }
       if(chances  == 3 || chances == 4){
          abilty(chances);
       }
-      else{
-         canSA = false;
-      }
+
 
       Tools.delayer(1000);
 

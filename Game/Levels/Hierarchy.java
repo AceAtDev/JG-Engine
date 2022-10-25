@@ -7,8 +7,8 @@ import Game.Rooms.Room;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(30,0,4);
-   Boss estran = new Boss("estran",100,1,12,1);
+   Enemy notCubeL1 = new Enemy(30,0,1);
+   Boss estran = new Boss("Estran",100,1,12,1);
 
 
    
@@ -45,6 +45,7 @@ public class Hierarchy {
       
       
    };
+   // null are non-exsited area
 
 
    

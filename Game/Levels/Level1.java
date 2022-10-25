@@ -6,8 +6,6 @@ public class Level1 extends Hierarchy{
    
    public void start(){
 
-      
-
       PlayerController pc = new PlayerController(currentFloor, startingRoom);
       pc.start();
       
