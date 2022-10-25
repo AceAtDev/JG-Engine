@@ -28,6 +28,7 @@ public class Hierarchy {
    
    private Room threeGatesLeftUpDown = new Room(false,true,true,true);
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
+   private Room threeGatesDownRightLeft = new Room(true, true,false,true);
 
 
    private Room bossRoom = new Room(false, true,false,false, estran);
@@ -45,11 +46,25 @@ public class Hierarchy {
       
       
    };
-   // null are non-exsited area
+   // null are non-exsited area/Room
+
+   private Room[][] projectSupplyMap = { // Should only be used when deadline is reached & couldn't finishing styling in the main floor
+      // 8x8
+      // UNFINISHED
+
+      {null, null, null, null, null, null, null, null},
+      {null, null, null, null, null, null, null, null},
+      {null,     null, threeGatesDownRightLeft, threeGatesDownRightLeft,  twoGatesRightLeft,      oneGateLeft,    null,    null},
+      {null,       null,      null,      twoGatesDownUp     ,  null,      null,    null,    null},
+      {null, oneGateRight, startingRoom, threeGatesLeftUpDown,    null,    null,    null,    null},
+      {null, null, null, null, null, null, null, null},
+      {null, null, null, null, null, null, null, null},
+      {null, null, null, null, null, null, null, null}
+   };
 
 
    
-   protected Floor currentFloor = new Floor(baseFloor);
+   protected Floor currentFloor = new Floor(projectSupplyMap);
 
 
 
