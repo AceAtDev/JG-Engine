@@ -19,7 +19,7 @@ final class Title {
       System.out.println("    ██║░░██║╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝");
       System.out.println("    ╚═╝░░╚═╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░");
 
-      Tools.AskString("Press ENTER to continue");
+      Tools.AskString("Press ENTER to play!");
    }
 
 }
