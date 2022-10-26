@@ -9,7 +9,7 @@ public class Credits {
       Dialogue.dialogprint("- Peyton");
       Dialogue.dialogprint("- Lena Raine");
       Dialogue.dialogprint("- Toby fox");
-      Tools.delayer(1000);
+      Tools.delayer(4000);
       Tools.ClearConsole();
 
    }

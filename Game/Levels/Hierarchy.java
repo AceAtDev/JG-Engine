@@ -7,7 +7,7 @@ import Game.Rooms.Room;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(30,0,1);
+   Enemy notCubeL1 = new Enemy(999,0,1);
    Boss estran = new Boss("Estran",100,1,12,1);
 
 
@@ -31,14 +31,14 @@ public class Hierarchy {
    private Room threeGatesDownRightLeft = new Room(true, true,false,true);
 
 
-   private Room bossRoom = new Room(false, true,false,false, estran);
+   private Room bossRoom = new Room(false, true,false,false, true);
 
 
    protected Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP
 
 
    // do mapping here
-   private Room[][] baseFloor = { 
+   private Room[][] ToturalFloor = { 
       {null, twoGatesDownRight,  twoGatesRightLeft, bossRoom},
       {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
@@ -48,23 +48,18 @@ public class Hierarchy {
    };
    // null are non-exsited area/Room
 
-   private Room[][] projectSupplyMap = { // Should only be used when deadline is reached & couldn't finishing styling in the main floor
+   private Room[][] firstFloor = { // Should only be used when deadline is reached & couldn't finishing styling in the main floor
       // 8x8
       // UNFINISHED
-
-      {null, null, null, null, null, null, null, null},
-      {null, null, null, null, null, null, null, null},
-      {null,     null, threeGatesDownRightLeft, threeGatesDownRightLeft,  twoGatesRightLeft,      oneGateLeft,    null,    null},
-      {null,       null,      null,      twoGatesDownUp     ,  null,      null,    null,    null},
-      {null, oneGateRight, startingRoom, threeGatesLeftUpDown,    null,    null,    null,    null},
-      {null, null, null, null, null, null, null, null},
-      {null, null, null, null, null, null, null, null},
-      {null, null, null, null, null, null, null, null}
+      {null,   null,    null,    null},
+      {null,   null,    null,    null},
+      {null,   null,    null,    null},
+      {null,   null,    null,     null},
+      
    };
 
-
    
-   protected Floor currentFloor = new Floor(projectSupplyMap);
+   protected Floor currentFloor = new Floor(ToturalFloor);
 
 
 

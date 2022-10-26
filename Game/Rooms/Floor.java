@@ -5,8 +5,8 @@ public class Floor {
 
 
    private Room currentRoom = null;
-   public int currentRoomX = 0; // put them private after testing
-   public int currentRoomY = 0; // put them private after testing
+   private int currentRoomX = 0; // put them private after testing
+   private int currentRoomY = 0; // put them private after testing
    
 
    private Room[][] floor;
@@ -85,7 +85,6 @@ public class Floor {
    private void checkEnemy(){
       if(currentRoom.doesContainEnemy != null){
          currentRoom.callEnemy();
-         System.out.println("Room has an enemy");
       }
    }
 

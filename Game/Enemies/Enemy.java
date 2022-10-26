@@ -19,7 +19,7 @@ public class Enemy implements EnemyTemplates {
    protected int deffence = 1;
    protected int rank = 0;
 
-   private int damageMultiplier = 4;
+   protected int damageMultiplier = 4;
    boolean warnedPlayer = false;
 
 
@@ -85,15 +85,17 @@ public class Enemy implements EnemyTemplates {
 
 
          if(currentEnemyHP <= 0){
-            MusicManager.transformFromCurrentMusicToOther(8);
-            // play enemy death anaimation
-            // play victory sound
+
+            MusicManager.stopMusic();
+            SoundManager.playSE(11);
+            Tools.delayer(100);
             currentPlayerHP += 10;
             PlayerBattleController.setCurrentHp(currentPlayerHP); // Update player's hp
             Tools.ClearConsole();
             // play audio victory
             System.out.println("YOU WON! YOU HAVE RESTORED 10 HEALH POINTS!");
             Tools.AskString("Press Enter to continue");
+            MusicManager.transformFromCurrentMusicToOther(8);
             return;
          }
          
@@ -109,7 +111,7 @@ public class Enemy implements EnemyTemplates {
    
    Random rand = new Random();
    private int enemyTurn(int playerHP){
-      int chances = rand.nextInt(8);
+      int chances = rand.nextInt(3);
       System.out.println(chances);
       boolean canSA = false;
 
@@ -129,18 +131,19 @@ public class Enemy implements EnemyTemplates {
          canSA = false;
 
          Dialogue.dialogprint(name + " has used their special attack");
-         // play audio special attack
+         SoundManager.playSE(9);
+         
          
 
          Tools.delayer(1250);
          if(PlayerBattleController.isDodgeAttack() == true){// player dodged special attack
             
             // play audio special attack deffend
+            SoundManager.playSE(10);
 
-            Dialogue.dialogprint("However, You dodged the attack!");
+            Dialogue.dialogprint("However, You have deffend the attack!");
             Tools.delayer(1000);
             
-
             PlayerBattleController.setDodgeAttack(false);
             return playerHP;
          }
@@ -171,15 +174,15 @@ public class Enemy implements EnemyTemplates {
    private void abilty(int chance){
 
       if(chance == 4){
-         damage = damage * 2;
-         Dialogue.dialogprint(name + " drunk a red lucid... " + name + "'s damage increased by x2");
+         damage = damage + 3;
+         Dialogue.dialogprint(name + " drunk a red lucid... " + name + "'s damage increased by +3");
          Tools.delayer(1000);
          return;
       }
 
       Dialogue.dialogprint(name + " wore an iron armor! " + name + "'s deffence increased by x2");
       Tools.delayer(250);
-      Dialogue.dialogprint("However, " + name + " is looking kinda mincrafty ");
+      Dialogue.dialogprint("Look at that! " + name + " is looking kinda mincrafty ");
       Tools.delayer(500);
 
    }

@@ -10,6 +10,8 @@ public class Room implements RoomTemplates {
    protected boolean left = true;
    protected boolean up = true;
    protected boolean down = true;
+   protected boolean hasStairs = false;
+
    protected Enemy doesContainEnemy;
 
 
@@ -51,6 +53,15 @@ public class Room implements RoomTemplates {
       this.doesContainEnemy = enemy;
    }
 
+   public Room(boolean right, boolean left, boolean up, boolean down, boolean hasStairs){
+      this.up = up;
+      this.right = right;
+      this.down = down;
+      this.left = left;
+      this.hasStairs = hasStairs;
+
+   }
+
    public void callEnemy(){
       doesContainEnemy.enemyChallenged(PlayerController.getCurrentHP());
    }
@@ -70,6 +81,7 @@ public class Room implements RoomTemplates {
       return down;
    }
    
+
 
    public void print(){
 

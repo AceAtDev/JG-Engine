@@ -32,6 +32,7 @@ public class PlayerBattleController {
       int bounsDamageChance = Tools.randomNumRoller(4);
       SoundManager.playSE(7);
       if(bounsDamageChance == 1){
+         SoundManager.playSE(9);
          Dialogue.dialogprint("YOU HIT A CRIT HIT!");
          //play crit hit sfx
          Tools.delayer(250);

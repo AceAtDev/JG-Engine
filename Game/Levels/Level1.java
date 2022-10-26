@@ -7,7 +7,7 @@ public class Level1 extends Hierarchy{
    
    public void start(){
 
-      Cutscene.startingCutscene();
+      //Cutscene.startingCutscene();
 
       PlayerController pc = new PlayerController(currentFloor, startingRoom);
       pc.start();

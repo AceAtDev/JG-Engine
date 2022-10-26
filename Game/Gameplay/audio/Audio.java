@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[9];
+   URL soundURL[] = new URL[13];
 
    //AudioClip ac = getAudioClip(getCodeBase(), soundFile);
 
@@ -28,6 +28,10 @@ public class Audio {
       soundURL[6] = getClass().getResource("./files/Soul Damaged-HQ.wav");
       soundURL[7] = getClass().getResource("./files/Normal Attack-HQ.wav");
       soundURL[8] = getClass().getResource("./files/Celeste Original Soundtrack - 03 - Resurrections.wav");
+      soundURL[9] = getClass().getResource("./files/epic-sword-clang-2.wav");
+      soundURL[10] = getClass().getResource("./files/bumpelsnake__bump3.wav");
+      soundURL[11] = getClass().getResource("./files/victory.wav");
+      soundURL[12] = getClass().getResource("./files/sound-of-the-walk.wav");
       //soundURL[8] = getClass().getResource("./files/talk SFX.wav");
 
    }
