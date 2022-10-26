@@ -14,7 +14,7 @@ class Main{
 
       Tools.ClearConsole();
       
-      /* 
+      
       Dialogue.dialogprint("Game uses music and sound.");
       Tools.delayer(1000);
       Dialogue.dialogprint("For better experience please rise the sound of you device");
@@ -25,7 +25,7 @@ class Main{
 
 
       Title.draw();
-      */
+      
 
 
       Level1 firstLevel = new Level1();

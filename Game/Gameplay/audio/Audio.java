@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
 public class Audio {
 
    Clip clip;
-   URL soundURL[] = new URL[13];
+   URL soundURL[] = new URL[14];
 
    //AudioClip ac = getAudioClip(getCodeBase(), soundFile);
 
@@ -32,6 +32,7 @@ public class Audio {
       soundURL[10] = getClass().getResource("./files/bumpelsnake__bump3.wav");
       soundURL[11] = getClass().getResource("./files/victory.wav");
       soundURL[12] = getClass().getResource("./files/sound-of-the-walk.wav");
+      soundURL[13] = getClass().getResource("./files/Deltarune - Intro (Opening Scene)-YoutubeConvert.cc.wav");
       //soundURL[8] = getClass().getResource("./files/talk SFX.wav");
 
    }
