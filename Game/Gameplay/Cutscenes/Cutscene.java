@@ -10,37 +10,41 @@ public class Cutscene implements CutsenceTemplates {
 
       MusicManager.transformFromCurrentMusicToOther(13);
       //To do: put starting music
+      Tools.delayer(1000);
+
       Tools.ClearConsole();
       CutsenceTemplates.s1_c1();
       Tools.delayer(1000);
       Dialogue.dialogprint("The FBI are developing a new kind of AI computer Deffence");
       Tools.delayer(1350);
       Dialogue.dialogprint("This tool can access the any computer and any operating system");
-      Tools.delayer(3500);
+      Tools.delayer(5500);
 
       Tools.ClearConsole();
       CutsenceTemplates.s1_c2();
       Tools.delayer(1000);
       Dialogue.dialogprint("The Tool job is simple");
-      Tools.delayer(3500);
+      Tools.delayer(5500);
 
       Tools.ClearConsole();
       CutsenceTemplates.s1_c3();
       Tools.delayer(1000);
       Dialogue.dialogprint("Destory every data, algorithm, or point of deffence at that device has");
-      Tools.delayer(3500);
+      Tools.delayer(5500);
 
       Tools.ClearConsole();
       CutsenceTemplates.s1_c4();
       Tools.delayer(1000);
       Dialogue.dialogprint("Once the tool finds the access key, it will return it with all the info on it");
-      Tools.delayer(3500);
+      Tools.delayer(5500);
 
       Tools.ClearConsole();
       CutsenceTemplates.s1_c5();
       Tools.delayer(1000);
-      Dialogue.dialogprint("Easy money");
-      Tools.delayer(3500);
+      Dialogue.dialogprint("Should be easy money");
+      Tools.delayer(2000);
+      Dialogue.dialogprint("Or is it?");
+      Tools.delayer(5500);
 
       Tools.ClearConsole();
       Tools.delayer(5000);

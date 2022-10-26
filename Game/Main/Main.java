@@ -5,6 +5,7 @@ package Game.Main;
 import External.Tools;
 import Game.Credits;
 import Game.Dialogue.Dialogue;
+import Game.Gameplay.Cutscenes.Cutscene;
 import Game.Levels.Level1;
 
 
@@ -23,10 +24,11 @@ class Main{
       
       Credits.print();
 
-
       Title.draw();
-      
 
+
+
+      Cutscene.startingCutscene();
 
       Level1 firstLevel = new Level1();
       firstLevel.start();

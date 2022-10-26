@@ -7,7 +7,7 @@ import Game.Gameplay.audio.SoundManager;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
-public class PlayerController extends PlayerBattleController{ // this class should not be created but once
+public class PlayerController extends PlayerBattleController{ // this class should not be instansited but once
 
    private Floor floor;
    private Room startingRoom;
@@ -43,9 +43,13 @@ public class PlayerController extends PlayerBattleController{ // this class shou
    }
 
    
+   Room currentRoom = floor.getCurrentRoom();
    private void navigateRooms(){
       
-      Room currentRoom = floor.getCurrentRoom();
+
+      if(currentRoom == null){
+         currentRoom = floor.lookForStartingRoom(startingRoom);
+      }
 
 
       int playerChose = Tools.AskInt("Where do you wish to go? \n" + 

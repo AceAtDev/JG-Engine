@@ -4,10 +4,11 @@ import Game.Enemies.Boss;
 import Game.Enemies.Enemy;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
+import Game.Rooms.Stairs;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(999,0,1);
+   Enemy notCubeL1 = new Enemy(50,0,1);
    Boss estran = new Boss("Estran",100,1,12,1);
 
 
@@ -30,16 +31,16 @@ public class Hierarchy {
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
    private Room threeGatesDownRightLeft = new Room(true, true,false,true);
 
+   
 
-   private Room bossRoom = new Room(false, true,false,false, true);
 
-
+   
+   
    protected Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP
-
-
+   
    // do mapping here
-   private Room[][] ToturalFloor = { 
-      {null, twoGatesDownRight,  twoGatesRightLeft, bossRoom},
+   private Room[][] toturalFloor = { 
+      {null, twoGatesDownRight,  twoGatesRightLeft, null},
       {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
       {null, twoGatesUpRight, oneGateLeft},
@@ -53,13 +54,34 @@ public class Hierarchy {
       // UNFINISHED
       {null,   null,    null,    null},
       {null,   null,    null,    null},
+      {null,   startingRoom,    oneGateLeft,    null},
       {null,   null,    null,    null},
-      {null,   null,    null,     null},
       
    };
 
    
-   protected Floor currentFloor = new Floor(ToturalFloor);
+   
+   public Floor currentFloor = new Floor(toturalFloor);
+
+
+   /* 
+    * To Do: create stairs 
+    Idea: 
+      You could put all the floor in an array
+   */
+
+
+
+
+   public Floor getCurrentFloor() {
+      return currentFloor;
+   }
+
+   public void setCurrentFloor(Floor newFloor) {
+      
+      this.currentFloor = newFloor;
+      return;
+   }
 
 
 
