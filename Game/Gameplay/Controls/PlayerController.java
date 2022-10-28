@@ -54,31 +54,34 @@ public class PlayerController extends PlayerBattleController{ // this class shou
       }
 
 
-      int playerChose = Tools.AskInt("Where do you wish to go? \n" + 
-      "1: right\n" +
-      "2: left\n" +
-      "3: up\n" +
-      "4: down");
+      char playerChose = Tools.AskChar("Where do you wish to go? \n" + 
+      "W: up\n" +
+      "D: right\n" +
+      "A: left\n" +
+      "S: down");
+      playerChose = Character.toLowerCase(playerChose);
 
-      if(playerChose == 1 && currentRoom.getRoomExitRight()){ // there is an exit to the right
+
+
+      if(playerChose == 'd' && currentRoom.getRoomExitRight()){ // there is an exit to the right
          SoundManager.playSE(12);
          currentRoom = floor.moveRight();
          currentRoom.print();
       }
 
-      else if(playerChose == 2 && currentRoom.getRoomExitLeft()){ // there is an exit to the left
+      else if(playerChose == 'a' && currentRoom.getRoomExitLeft()){ // there is an exit to the left
          SoundManager.playSE(12);
          currentRoom = floor.moveLeft();
          currentRoom.print();
       }
 
-      else if(playerChose == 3 && currentRoom.getRoomExitUp()){ // there is an exit to the up
+      else if(playerChose == 'w' && currentRoom.getRoomExitUp()){ // there is an exit to the up
          SoundManager.playSE(12);
          currentRoom = floor.moveUp();
          currentRoom.print();
       }
 
-      else if(playerChose == 4 && currentRoom.getRoomExitDown()){ // there is an exit to the down
+      else if(playerChose == 's' && currentRoom.getRoomExitDown()){ // there is an exit to the down
          SoundManager.playSE(12);
          currentRoom = floor.moveDown();
          currentRoom.print();

@@ -36,8 +36,25 @@ public class Tools{
          return inputs;
       }
       catch (Exception e) {
-         System.out.println("Unacceptable value, plaese try again \n\n");
+         System.out.println("Unacceptable value, plaese try again \n");
          return AskString(theMessage);
+      }
+
+   }
+
+   public static char AskChar(String message) {
+
+      String theMessage = message;
+      System.out.println(theMessage);
+      
+      try  {
+         Scanner userInput = new Scanner(System.in);
+         char inputs = userInput.nextLine().charAt(0);
+         return inputs;
+      }
+      catch (Exception e) {
+         System.out.println("Unacceptable value, plaese try again \n");
+         return AskChar(theMessage);
       }
 
    }
