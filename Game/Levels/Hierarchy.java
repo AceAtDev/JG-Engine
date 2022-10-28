@@ -31,16 +31,15 @@ public class Hierarchy {
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
    private Room threeGatesDownRightLeft = new Room(true, true,false,true);
 
-   
-
-
+   private Stairs stairs = new Stairs(false,true,false,false,0);
    
    
-   protected Room startingRoom = fourDirectionRoom; // the room that game will start at; ONLY ONE SHOULD BE ON THE MAP
+   protected Room startingRoom = fourDirectionRoom; // the room that player will start at; ONLY ONE SHOULD BE ON PER MAP/FLOOR
+   
    
    // do mapping here
-   private Room[][] toturalFloor = { 
-      {null, twoGatesDownRight,  twoGatesRightLeft, null},
+   private Room[][] toturialRooms = { 
+      {null, twoGatesDownRight,  twoGatesRightLeft, stairs},
       {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
       {null, twoGatesUpRight, oneGateLeft},
@@ -49,19 +48,25 @@ public class Hierarchy {
    };
    // null are non-exsited area/Room
 
+   
    private Room[][] firstFloor = { // Should only be used when deadline is reached & couldn't finishing styling in the main floor
-      // 8x8
-      // UNFINISHED
-      {null,   null,    null,    null},
-      {null,   null,    null,    null},
-      {null,   startingRoom,    oneGateLeft,    null},
-      {null,   null,    null,    null},
-      
+   // 8x8
+   // UNFINISHED
+   {null,   null,    null,    null},
+   {null,   null,    null,    null},
+   {null,   startingRoom,    oneGateLeft,    null},
+   {null,   null,    null,    null},
+
    };
 
-   
-   
-   public Floor currentFloor = new Floor(toturalFloor);
+
+   public Floor toturialFloor = new Floor(toturialRooms);
+   public Floor baseFloor = new Floor(firstFloor);
+
+
+   public Floor[] currentFloor = {toturialFloor, baseFloor};
+
+   //public Floor dfd = new Floor(toturialRooms);
 
 
    /* 
@@ -69,20 +74,5 @@ public class Hierarchy {
     Idea: 
       You could put all the floor in an array
    */
-
-
-
-
-   public Floor getCurrentFloor() {
-      return currentFloor;
-   }
-
-   public void setCurrentFloor(Floor newFloor) {
-      
-      this.currentFloor = newFloor;
-      return;
-   }
-
-
 
 }

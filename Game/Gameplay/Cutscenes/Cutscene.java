@@ -10,9 +10,9 @@ public class Cutscene implements CutsenceTemplates {
 
       MusicManager.transformFromCurrentMusicToOther(13);
       //To do: put starting music
+      Tools.ClearConsole();
       Tools.delayer(1000);
 
-      Tools.ClearConsole();
       CutsenceTemplates.s1_c1();
       Tools.delayer(1000);
       Dialogue.dialogprint("The FBI are developing a new kind of AI computer Deffence");

@@ -9,6 +9,8 @@ public class Credits {
       Dialogue.dialogprint("- Peyton");
       Dialogue.dialogprint("- Lena Raine");
       Dialogue.dialogprint("- Toby fox");
+      Tools.delayer(1000);
+      Dialogue.dialogprint("Check their special work!");
       Tools.delayer(4000);
       Tools.ClearConsole();
 

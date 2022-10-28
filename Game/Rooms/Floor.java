@@ -80,6 +80,10 @@ public class Floor {
 
    private void updateRoom(){
       currentRoom = floor[currentRoomY][currentRoomX]; 
+
+      if(currentRoom.hasStairs == true){
+         
+      }
    }
 
    private void checkEnemy(){

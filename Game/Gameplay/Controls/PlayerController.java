@@ -43,11 +43,13 @@ public class PlayerController extends PlayerBattleController{ // this class shou
    }
 
    
-   Room currentRoom = floor.getCurrentRoom();
    private void navigateRooms(){
+      Room currentRoom = floor.getCurrentRoom();
       
 
       if(currentRoom == null){
+         System.out.println("you've been restarted in your first room");
+         System.out.println("Someting worng happend plase talk to the developer about it");
          currentRoom = floor.lookForStartingRoom(startingRoom);
       }
 

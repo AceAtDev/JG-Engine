@@ -15,7 +15,7 @@ class Main{
 
       Tools.ClearConsole();
       
-      
+      /*
       Dialogue.dialogprint("Game uses music and sound.");
       Tools.delayer(1000);
       Dialogue.dialogprint("For better experience please rise the sound of you device");
@@ -25,15 +25,21 @@ class Main{
       Credits.print();
 
       Title.draw();
-
+      
 
 
       Cutscene.startingCutscene();
+      */
 
       Level1 firstLevel = new Level1();
       firstLevel.start();
    
 
+   }
+
+
+   public void initialize(){
+      
    }
 
 }
