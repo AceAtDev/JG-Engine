@@ -9,7 +9,7 @@ import javax.sound.sampled.Clip;
 
 // |AudioSystem and controllor|
 // I adivse to make another script and creating this object inside that script
-// by that, you could make a ststic meathods
+// by that, you could make a ststic meathods and control things easily
 public class Audio {
 
    Clip clip;

@@ -9,7 +9,6 @@ import Game.Dialogue.Dialogue;
 import Game.Gameplay.Controls.PlayerController;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
-import Game.Levels.Hierarchy;
 
 public class Stairs extends Room{
 

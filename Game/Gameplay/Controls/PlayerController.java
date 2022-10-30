@@ -7,7 +7,7 @@ import Game.Gameplay.audio.SoundManager;
 import Game.Rooms.Floor;
 import Game.Rooms.Room;
 
-public class PlayerController extends PlayerBattleController{ // this class should not be instansited but once
+public class PlayerController extends PlayerStates{ // this class should not be instansited but once
 
    private Floor floor;
    private Room startingRoom;

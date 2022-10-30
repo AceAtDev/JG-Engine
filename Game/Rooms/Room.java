@@ -1,11 +1,7 @@
 package Game.Rooms;
 
-import External.Tools;
-import Game.Dialogue.Dialogue;
 import Game.Enemies.Enemy;
 import Game.Gameplay.Controls.PlayerController;
-import Game.Gameplay.audio.MusicManager;
-import Game.Gameplay.audio.SoundManager;
 
 public class Room implements RoomTemplates {
    

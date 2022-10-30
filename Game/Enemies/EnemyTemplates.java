@@ -1,3 +1,4 @@
+// Graphics for the enemy because it is fun :)
 package Game.Enemies;
 
 public interface EnemyTemplates {

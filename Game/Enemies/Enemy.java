@@ -1,15 +1,15 @@
-package Game.Enemies;
+// From the name
+// Date: 10/28/2022
 
-import java.util.Random;
+package Game.Enemies;
 
 
 import External.Tools;
 import Game.Dialogue.Dialogue;
-import Game.Gameplay.Controls.PlayerBattleController;
+import Game.Gameplay.Controls.PlayerStates;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 import Game.Main.LoseScreen;
-import Game.Enemies.AttackBehaviour;
 
 public class Enemy implements EnemyTemplates {
 
@@ -69,11 +69,11 @@ public class Enemy implements EnemyTemplates {
          switch(playerChose){
             case 1:
             // play damage audio
-            currentEnemyHP = PlayerBattleController.doDamage(currentEnemyHP) + deffence;
+            currentEnemyHP = PlayerStates.doDamage(currentEnemyHP) + deffence;
             break;
    
             case 2:
-            PlayerBattleController.setDodgeAttack(true);
+            PlayerStates.setDodgeAttack(true);
 
             break;
             default:
@@ -90,7 +90,7 @@ public class Enemy implements EnemyTemplates {
             SoundManager.playSE(11);
             Tools.delayer(100);
             currentPlayerHP += 10;
-            PlayerBattleController.setCurrentHp(currentPlayerHP); // Update player's hp
+            PlayerStates.setCurrentHp(currentPlayerHP); // Update player's hp
             Tools.ClearConsole();
             // play audio victory
             System.out.println("YOU WON! YOU HAVE RESTORED 10 HEALH POINTS!");
@@ -110,7 +110,7 @@ public class Enemy implements EnemyTemplates {
 
    
    protected static int attack(int playerHP, int damage){
-      playerHP -= damage - PlayerBattleController.getDeffence(); 
+      playerHP -= damage - PlayerStates.getDeffence(); 
       return playerHP;
    }
 

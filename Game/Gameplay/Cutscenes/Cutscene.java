@@ -1,3 +1,6 @@
+// an object that will start... well cutscenes
+// the cutscenes are built the same idea as Room object
+// Date: 10/28/2022
 package Game.Gameplay.Cutscenes;
 
 import External.Tools;

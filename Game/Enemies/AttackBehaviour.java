@@ -1,13 +1,10 @@
-// Templates of enemy attack
+// Templates of enemy attack and turns
 // Date: 10/28/2022
 package Game.Enemies;
 
-import java.util.Random;
-
 import External.Tools;
 import Game.Dialogue.Dialogue;
-import Game.Gameplay.Controls.PlayerBattleController;
-import Game.Gameplay.audio.MusicManager;
+import Game.Gameplay.Controls.PlayerStates;
 import Game.Gameplay.audio.SoundManager;
 
 public class AttackBehaviour extends Enemy {
@@ -21,7 +18,7 @@ public class AttackBehaviour extends Enemy {
       
 
       Tools.delayer(1250);
-      if(PlayerBattleController.isDodgeAttack() == true){// player dodged special attack
+      if(PlayerStates.isDodgeAttack() == true){// player dodged special attack
          
          // play audio special attack deffend
          SoundManager.playSE(10);
@@ -29,7 +26,7 @@ public class AttackBehaviour extends Enemy {
          Dialogue.dialogprint("However, You have deffend the attack!");
          Tools.delayer(1000);
          
-         PlayerBattleController.setDodgeAttack(false);
+         PlayerStates.setDodgeAttack(false);
          return playerHP;
       }
 
@@ -79,7 +76,7 @@ public class AttackBehaviour extends Enemy {
       }
 
       System.out.println(name + " decided to attack!");
-      PlayerBattleController.setDodgeAttack(false);
+      PlayerStates.setDodgeAttack(false);
       Tools.delayer(750);
       // play damage audio
       SoundManager.playSE(6);

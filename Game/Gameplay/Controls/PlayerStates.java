@@ -1,3 +1,6 @@
+// Player's States, informations, and what the player can do!
+// Date: 10/28/2022
+
 package Game.Gameplay.Controls;
 
 
@@ -5,7 +8,7 @@ import External.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.audio.SoundManager;
 
-public class PlayerBattleController {
+public class PlayerStates {
    
    private static final int playerHP = 100;
    

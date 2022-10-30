@@ -8,6 +8,8 @@ import Game.Dialogue.Dialogue;
 import Game.Gameplay.Cutscenes.Cutscene;
 import Game.Levels.Level1;
 import Game.Levels.Level2;
+import Game.Levels.Level3;
+import Game.Levels.Level4;
 
 
 class Main{
@@ -38,6 +40,14 @@ class Main{
 
       Level2 secondLevel = new Level2();
       secondLevel.start();
+
+
+      Level3 thirdLevel = new Level3();
+      thirdLevel.start();
+
+
+      Level4 fourthLevel = new Level4();
+      fourthLevel.start();
    
 
    }

@@ -1,6 +1,6 @@
+// Floor is a room manager that is responsible to put rooms in a level
+// Date: 10/28/2022
 package Game.Rooms;
-
-
 
 public class Floor {
 

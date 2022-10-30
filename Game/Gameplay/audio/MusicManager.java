@@ -1,7 +1,12 @@
+// Sourse of Music and only the one, you could play some SFX but it something you don't wanna do
+// because it will break the music otherwise
+// Date: 10/28/2022
+
 package Game.Gameplay.audio;
 
 // Use this only for music control
 public class MusicManager {
+   
    private static Audio music = new Audio();
 
    public static void playMusic(int i){
