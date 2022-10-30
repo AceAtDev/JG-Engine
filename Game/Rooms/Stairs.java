@@ -1,31 +1,39 @@
+// From the name we can know what is this!
+// NOTE: level wil end and go to the next level after reaching the stairs!
+// Date: 10/28/2022
+
 package Game.Rooms;
 
 import External.Tools;
 import Game.Dialogue.Dialogue;
+import Game.Gameplay.Controls.PlayerController;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
+import Game.Levels.Hierarchy;
 
-public class Stairs extends Room {
+public class Stairs extends Room{
+
    
-   private int currentFloorIndex;
 
-   public Stairs(boolean right, boolean left, boolean up, boolean down, int currentFloorIndex) {
+   public Stairs(boolean hasStairs) {
 
-      super(right, left, up, down);
-      this.currentFloorIndex = currentFloorIndex;
+      this.hasStairs = hasStairs;
 
    }
 
    public void moveNextFloor(){
-
+      
+      
       Tools.ClearConsole();
       MusicManager.stopMusic();
       Tools.delayer(150);
       SoundManager.playSE(14);
-      Tools.delayer(2000);
+      Tools.delayer(500);
       Dialogue.dialogprint("You have climbed the stairs to get closer to system");
 
-      currentFloorIndex++;
+      PlayerController.levelFinished(); // go to the next level
    }
+
+
 
 }

@@ -12,13 +12,15 @@ public class PlayerController extends PlayerBattleController{ // this class shou
    private Floor floor;
    private Room startingRoom;
 
+   private Room currentRoom;
+   private static boolean isFinishedLevel = false;
+
 
    public PlayerController(Floor currentFloor, Room startingRoom){
       this.floor = currentFloor;
       this.startingRoom = startingRoom;
 
    }
-
 
 
    
@@ -29,23 +31,22 @@ public class PlayerController extends PlayerBattleController{ // this class shou
 
       MusicManager.playMusic(8);
       
+      if(isFinishedLevel == true)
+         isFinishedLevel = false;
 
-      while (getCurrentHP() > 0){
+      while (isFinishedLevel == false){
 
          navigateRooms();
 
 
       }
-
-     
-      throw new IllegalArgumentException("State out of bounds");
      
    }
 
    
    private void navigateRooms(){
-      Room currentRoom = floor.getCurrentRoom();
-      
+
+      currentRoom = floor.getCurrentRoom();
 
       if(currentRoom == null){
          System.out.println("you've been restarted in your first room");
@@ -94,5 +95,9 @@ public class PlayerController extends PlayerBattleController{ // this class shou
    
    }
 
+
+   public static void levelFinished(){ // call when the player gets to a point where level is finished!
+      isFinishedLevel = true;
+   }
 
 }
