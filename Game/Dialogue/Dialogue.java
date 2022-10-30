@@ -1,3 +1,5 @@
+// This the print function of java but will makes text prints as if we were in an RPG game.
+// Date: 10/28/2022
 package Game.Dialogue;
 
 import External.Tools;

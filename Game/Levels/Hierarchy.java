@@ -8,8 +8,11 @@ import Game.Rooms.Stairs;
 
 public class Hierarchy {
 
-   Enemy notCubeL1 = new Enemy(50,0,1);
-   Boss estran = new Boss("Estran",100,1,12,1);
+   protected int currentFloorIndex = 0;
+
+
+   Enemy notCubeL1 = new Enemy(50,0,2);
+   //Boss estran = new Boss("Estran",100,1,12,true);
 
 
    
@@ -31,7 +34,7 @@ public class Hierarchy {
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
    private Room threeGatesDownRightLeft = new Room(true, true,false,true);
 
-   private Stairs stairs = new Stairs(false,true,false,false,0);
+   private Stairs stairs = new Stairs(true);
    
    
    protected Room startingRoom = fourDirectionRoom; // the room that player will start at; ONLY ONE SHOULD BE ON PER MAP/FLOOR
@@ -64,7 +67,9 @@ public class Hierarchy {
    public Floor baseFloor = new Floor(firstFloor);
 
 
-   public Floor[] currentFloor = {toturialFloor, baseFloor};
+   protected Floor[] currentFloor = {toturialFloor, baseFloor};
+   //protected Floor currentFloor = overallFloors[currentFloorIndex];
+   
 
    //public Floor dfd = new Floor(toturialRooms);
 

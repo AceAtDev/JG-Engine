@@ -7,6 +7,7 @@ import Game.Credits;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.Cutscenes.Cutscene;
 import Game.Levels.Level1;
+import Game.Levels.Level2;
 
 
 class Main{
@@ -33,6 +34,10 @@ class Main{
 
       Level1 firstLevel = new Level1();
       firstLevel.start();
+
+
+      Level2 secondLevel = new Level2();
+      secondLevel.start();
    
 
    }

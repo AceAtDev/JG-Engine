@@ -9,6 +9,7 @@ import Game.Gameplay.Controls.PlayerBattleController;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 import Game.Main.LoseScreen;
+import Game.Enemies.AttackBehaviour;
 
 public class Enemy implements EnemyTemplates {
 
@@ -17,10 +18,9 @@ public class Enemy implements EnemyTemplates {
    protected int damage = 5;
    protected int hp = 20;
    protected int deffence = 1;
-   protected int rank = 0;
+   protected boolean isBoss = false;
 
    protected int damageMultiplier = 4;
-   boolean warnedPlayer = false;
 
 
    public Enemy(){
@@ -100,7 +100,7 @@ public class Enemy implements EnemyTemplates {
          }
          
 
-         currentPlayerHP = enemyTurn(currentPlayerHP); // damage player
+         currentPlayerHP = AttackBehaviour.enemyTurn(currentPlayerHP, name, hp, damage, damageMultiplier); // damage player
 
       }
 
@@ -109,101 +109,15 @@ public class Enemy implements EnemyTemplates {
    }
 
    
-   Random rand = new Random();
-   private int enemyTurn(int playerHP){
-      int chances = rand.nextInt(3);
-      System.out.println(chances);
-      boolean canSA = false;
-
-      if(chances == 1 || chances == 2){
-         canSA = true;
-
-      }
-      if(chances  == 3 || chances == 4){
-         abilty(chances);
-      }
-
-
-      Tools.delayer(1000);
-
-      if(warnedPlayer == true){
-         warnedPlayer = false;
-         canSA = false;
-
-         Dialogue.dialogprint(name + " has used their special attack");
-         SoundManager.playSE(9);
-         
-         
-
-         Tools.delayer(1250);
-         if(PlayerBattleController.isDodgeAttack() == true){// player dodged special attack
-            
-            // play audio special attack deffend
-            SoundManager.playSE(10);
-
-            Dialogue.dialogprint("However, You have deffend the attack!");
-            Tools.delayer(1000);
-            
-            PlayerBattleController.setDodgeAttack(false);
-            return playerHP;
-         }
-
-         SoundManager.playSE(6);
-         return specialAttack(playerHP);
-      }
-
-      if(canSA){
-         Dialogue.dialogprint(name + " is preparing to use their special attack the next round, you should deffend yourself");
-         Tools.delayer(750);
-         warnedPlayer = true;
-         canSA = false;
-         return playerHP;
-      }
-
-      System.out.println(name + " decided to attack!");
-      PlayerBattleController.setDodgeAttack(false);
-      Tools.delayer(750);
-      // play damage audio
-      SoundManager.playSE(6);
-      return attack(playerHP);
-      
-
-   }
-
-
-   private void abilty(int chance){
-
-      if(chance == 4){
-         damage = damage + 3;
-         Dialogue.dialogprint(name + " drunk a red lucid... " + name + "'s damage increased by +3");
-         Tools.delayer(1000);
-         return;
-      }
-
-      Dialogue.dialogprint(name + " wore an iron armor! " + name + "'s deffence increased by x2");
-      Tools.delayer(250);
-      Dialogue.dialogprint("Look at that! " + name + " is looking kinda mincrafty ");
-      Tools.delayer(500);
-
-   }
-
-
-
-   private int attack(int playerHP){
+   protected static int attack(int playerHP, int damage){
       playerHP -= damage - PlayerBattleController.getDeffence(); 
       return playerHP;
    }
 
-   private int specialAttack(int playerHP){
-      playerHP -= damage * damageMultiplier;
-      return playerHP;
-   }
-
-
 
    private void print(){
 
-      if(rank == 1){
+      if(isBoss){
          EnemyTemplates.estran();
          return;
       }

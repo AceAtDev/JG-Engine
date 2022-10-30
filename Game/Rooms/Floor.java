@@ -1,12 +1,15 @@
 package Game.Rooms;
 
 
+
 public class Floor {
 
 
    private Room currentRoom = null;
    private int currentRoomX = 0; // put them private after testing
    private int currentRoomY = 0; // put them private after testing
+   private Stairs floorStair = new Stairs(true);
+
    
 
    private Room[][] floor;
@@ -82,7 +85,7 @@ public class Floor {
       currentRoom = floor[currentRoomY][currentRoomX]; 
 
       if(currentRoom.hasStairs == true){
-         
+         floorStair.moveNextFloor();
       }
    }
 
@@ -106,10 +109,8 @@ public class Floor {
          }
       }
 
-      throw new IllegalStateException("could not find starting Room");
+      throw new IllegalStateException("could not find starting Room and/or Stairs Room");
    }
-
-
 
 
 

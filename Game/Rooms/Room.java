@@ -1,7 +1,11 @@
 package Game.Rooms;
 
+import External.Tools;
+import Game.Dialogue.Dialogue;
 import Game.Enemies.Enemy;
 import Game.Gameplay.Controls.PlayerController;
+import Game.Gameplay.audio.MusicManager;
+import Game.Gameplay.audio.SoundManager;
 
 public class Room implements RoomTemplates {
    
@@ -14,22 +18,6 @@ public class Room implements RoomTemplates {
 
    protected Enemy doesContainEnemy;
 
-
-   //private int id;
-
-
-   /* Room Directio:ns
-                      UP: 1
-               +------------------+
-               +                  +
-               +                  +
- Left: 3 <--   +                  +  --> Right: 2
-               +                  +
-               +                  +
-               +                  +
-               +------------------+
-                      Down: 4  
-   */
    
 
    public Room(){
@@ -72,7 +60,8 @@ public class Room implements RoomTemplates {
    public boolean getRoomExitDown(){
       return down;
    }
-   
+
+
 
 
    public void print(){
