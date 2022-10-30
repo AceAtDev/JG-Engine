@@ -1,4 +1,7 @@
+// The backbone of the levels where things gets specified in it and levels can know what their need to do 
+// Date: 10/28/2022
 package Game.Levels;
+
 
 import Game.Enemies.Boss;
 import Game.Enemies.Enemy;
@@ -12,7 +15,7 @@ public class Hierarchy {
 
 
    Enemy notCubeL1 = new Enemy(50,0,2);
-   //Boss estran = new Boss("Estran",100,1,12,true);
+   Boss estran = new Boss("Estran",100,1,12,true);
 
 
    
@@ -23,7 +26,7 @@ public class Hierarchy {
    private Room oneGateLeft = new Room(false,true,false,false);
    private Room oneGateDown = new Room(false,false,false,true);
 
-   private Room twoGatesUpRight = new Room(true,false,true,false, notCubeL1);
+   private Room twoGatesUpRight = new Room(true,false,true,false);
    private Room twoGatesDownRight = new Room(true,false,false,true);
    private Room twoGatesDownLeft = new Room(false,true,false,true);
    private Room twoGatesUpLeft = new Room(false,true,true,false);
@@ -33,6 +36,11 @@ public class Hierarchy {
    private Room threeGatesLeftUpDown = new Room(false,true,true,true);
    private Room threeGatesLeftUpRight = new Room(true,true,true,false);
    private Room threeGatesDownRightLeft = new Room(true, true,false,true);
+   private Room threeGatesRightDownUp = new Room(true, false,true,true);
+
+
+   private Room bossRoom = new Room(false,true,false,false, estran);
+
 
    private Stairs stairs = new Stairs(true);
    
@@ -46,38 +54,39 @@ public class Hierarchy {
       {null, twoGatesDownUp, null},
       {oneGateRight, startingRoom, oneGateLeft},
       {null, twoGatesUpRight, oneGateLeft},
-      
-      
    };
    // null are non-exsited area/Room
 
    
-   private Room[][] firstFloor = { // Should only be used when deadline is reached & couldn't finishing styling in the main floor
-   // 8x8
-   // UNFINISHED
-   {null,   null,    null,    null},
-   {null,   null,    null,    null},
-   {null,   startingRoom,    oneGateLeft,    null},
-   {null,   null,    null,    null},
+   private Room[][] secondRooms = { 
+   {stairs,             threeGatesDownRightLeft,    oneGateLeft,        null},
+   {null,               threeGatesRightDownUp,    twoGatesRightLeft,    oneGateLeft},
+   {twoGatesDownRight,   startingRoom,          oneGateLeft,             null},
+   {oneGateUp,          twoGatesUpRight,        twoGatesRightLeft,    oneGateLeft},
+   };
 
+   private Room[][] thiredRooms = { 
+   {stairs,       twoGatesDownLeft,              null,                oneGateDown,        null},
+   {null,         threeGatesRightDownUp,    twoGatesDownLeft,      twoGatesDownUp,        null},
+   {null,            oneGateUp,           twoGatesUpRight,            threeGatesLeftUpDown,    null},
+   {oneGateRight,   twoGatesRightLeft,    twoGatesRightLeft,          startingRoom,    twoGatesDownLeft},
+   {null,               null,              oneGateRight,            threeGatesLeftUpRight,    twoGatesUpLeft}
+   };
+
+   private Room[][] finalRooms = {
+      {null,             oneGateDown,        null},
+      {oneGateRight,    startingRoom,   twoGatesRightLeft,    twoGatesRightLeft,    twoGatesRightLeft,    twoGatesRightLeft,    bossRoom},
+      {null,             oneGateUp,          null},
    };
 
 
-   public Floor toturialFloor = new Floor(toturialRooms);
-   public Floor baseFloor = new Floor(firstFloor);
+   private Floor toturialFloor = new Floor(toturialRooms);
+   private Floor secondFloor = new Floor(secondRooms);
+   private Floor thiredFloor = new Floor(thiredRooms);
+   private Floor bossFloor = new Floor(finalRooms);
 
 
-   protected Floor[] currentFloor = {toturialFloor, baseFloor};
-   //protected Floor currentFloor = overallFloors[currentFloorIndex];
-   
+   protected Floor[] currentFloor = {toturialFloor, secondFloor, thiredFloor, bossFloor};
 
-   //public Floor dfd = new Floor(toturialRooms);
-
-
-   /* 
-    * To Do: create stairs 
-    Idea: 
-      You could put all the floor in an array
-   */
 
 }
