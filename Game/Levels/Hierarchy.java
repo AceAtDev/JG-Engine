@@ -83,18 +83,18 @@ public class Hierarchy {
    // null are non-exsited area/Room
    
    private Room[][] secondRooms = { 
-   {stairs,             threeGatesDownRightLeft,    oneGateLeft,        null},
-   {null,               threeGatesRightDownUpE,    twoGatesRightLeft,    oneGateLeftE},
-   {twoGatesDownRight,   startingRoom,          oneGateLeft,             null},
-   {oneGateUp,          twoGatesUpRightE,        twoGatesRightLeft,    oneGateLeft},
+      {stairs,             threeGatesDownRightLeft,    oneGateLeft,        null},
+      {null,               threeGatesRightDownUpE,    twoGatesRightLeft,    oneGateLeftE},
+      {twoGatesDownRight,   startingRoom,          oneGateLeft,             null},
+      {oneGateUp,          twoGatesUpRightE,        twoGatesRightLeft,    oneGateLeft},
    };
 
    private Room[][] thiredRooms = { 
-   {stairs,       twoGatesDownLeft,              null,                oneGateDownE,        null},
-   {null,         threeGatesRightDownUp,    twoGatesDownLeft,      twoGatesDownUp,        null},
-   {null,            oneGateUp,           twoGatesUpRight,            threeGatesLeftUpDownE,    null},
-   {oneGateRightE,   twoGatesRightLeft,    twoGatesRightLeft,          startingRoom,    twoGatesDownLeft},
-   {null,               null,              oneGateRight,            threeGatesLeftUpRight,    twoGatesUpLeftE}
+      {stairs,       twoGatesDownLeft,              null,                oneGateDownE,        null},
+      {null,         threeGatesRightDownUp,    twoGatesDownLeft,      twoGatesDownUp,        null},
+      {null,            oneGateUp,           twoGatesUpRight,            threeGatesLeftUpDownE,    null},
+      {oneGateRightE,   twoGatesRightLeft,    twoGatesRightLeft,          startingRoom,    twoGatesDownLeft},
+      {null,               null,              oneGateRight,            threeGatesLeftUpRight,    twoGatesUpLeftE}
    };
 
    private Room[][] finalRooms = {
