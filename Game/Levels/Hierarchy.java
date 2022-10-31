@@ -14,8 +14,14 @@ public class Hierarchy {
    protected int currentFloorIndex = 0;
 
 
-   Enemy notCubeL1 = new Enemy(50,0,2);
-   Boss estran = new Boss("Estran",100,1,12,true);
+   private Enemy notCubeL1 = new Enemy(50,0,2);
+   private Enemy notCubeL2 = new Enemy(75,1,5);
+   private Enemy notCubeL3 = new Enemy(100,1,7);
+   private Enemy notCubeL4 = new Enemy(110,1,9);
+   private Enemy notCubeL5 = new Enemy(125,2,10);
+   private Enemy notCubeL6 = new Enemy(150,3,14);
+
+   Boss estran = new Boss("Estran",200,3,15,true);
 
 
    
@@ -39,7 +45,26 @@ public class Hierarchy {
    private Room threeGatesRightDownUp = new Room(true, false,true,true);
 
 
-   private Room bossRoom = new Room(false,true,false,false, estran);
+   // Rooms with enemy in
+   private Room oneGateUpE = new Room(false,false,true,false);
+   private Room oneGateRightE = new Room(true,false,false,false, notCubeL6);
+   private Room oneGateLeftE = new Room(false,true,false,false, notCubeL1);
+   private Room oneGateDownE = new Room(false,false,false,true, notCubeL4);
+
+   private Room twoGatesUpRightE = new Room(true,false,true,false, notCubeL2);
+   private Room twoGatesDownRightE = new Room(true,false,false,true);
+   private Room twoGatesDownLeftE = new Room(false,true,false,true);
+   private Room twoGatesUpLeftE = new Room(false,true,true,false, notCubeL5);
+   private Room twoGatesRightLeftE = new Room(true,true,false, false, notCubeL2);
+   private Room twoGatesDownUpE = new Room(false,false,true, true, notCubeL1);
+   
+   private Room threeGatesLeftUpDownE = new Room(false,true,true,true, notCubeL3);
+   private Room threeGatesLeftUpRightE = new Room(true,true,true,false);
+   private Room threeGatesDownRightLeftE = new Room(true, true,false,true);
+   private Room threeGatesRightDownUpE = new Room(true, false,true,true, notCubeL2);
+
+
+   private Room bossRoom = new Room(true,true,false,false, estran);
 
 
    private Stairs stairs = new Stairs(true);
@@ -50,32 +75,31 @@ public class Hierarchy {
    
    // do mapping here
    private Room[][] toturialRooms = { 
-      {null, twoGatesDownRight,  twoGatesRightLeft, stairs},
-      {null, twoGatesDownUp, null},
-      {oneGateRight, startingRoom, oneGateLeft},
-      {null, twoGatesUpRight, oneGateLeft},
+      {null,    twoGatesDownRight,  twoGatesRightLeftE, stairs},
+      {null,    twoGatesDownUpE,     null},
+      {oneGateRight, startingRoom,     oneGateLeft},
+      {null,    twoGatesUpRight,    oneGateLeftE},
    };
    // null are non-exsited area/Room
-
    
    private Room[][] secondRooms = { 
    {stairs,             threeGatesDownRightLeft,    oneGateLeft,        null},
-   {null,               threeGatesRightDownUp,    twoGatesRightLeft,    oneGateLeft},
+   {null,               threeGatesRightDownUpE,    twoGatesRightLeft,    oneGateLeftE},
    {twoGatesDownRight,   startingRoom,          oneGateLeft,             null},
-   {oneGateUp,          twoGatesUpRight,        twoGatesRightLeft,    oneGateLeft},
+   {oneGateUp,          twoGatesUpRightE,        twoGatesRightLeft,    oneGateLeft},
    };
 
    private Room[][] thiredRooms = { 
-   {stairs,       twoGatesDownLeft,              null,                oneGateDown,        null},
+   {stairs,       twoGatesDownLeft,              null,                oneGateDownE,        null},
    {null,         threeGatesRightDownUp,    twoGatesDownLeft,      twoGatesDownUp,        null},
-   {null,            oneGateUp,           twoGatesUpRight,            threeGatesLeftUpDown,    null},
-   {oneGateRight,   twoGatesRightLeft,    twoGatesRightLeft,          startingRoom,    twoGatesDownLeft},
-   {null,               null,              oneGateRight,            threeGatesLeftUpRight,    twoGatesUpLeft}
+   {null,            oneGateUp,           twoGatesUpRight,            threeGatesLeftUpDownE,    null},
+   {oneGateRightE,   twoGatesRightLeft,    twoGatesRightLeft,          startingRoom,    twoGatesDownLeft},
+   {null,               null,              oneGateRight,            threeGatesLeftUpRight,    twoGatesUpLeftE}
    };
 
    private Room[][] finalRooms = {
       {null,             oneGateDown,        null},
-      {oneGateRight,    startingRoom,   twoGatesRightLeft,    twoGatesRightLeft,    twoGatesRightLeft,    twoGatesRightLeft,    bossRoom},
+      {oneGateRight,    startingRoom,   twoGatesRightLeft,    twoGatesRightLeft,    twoGatesRightLeft,    twoGatesRightLeft,    bossRoom,    stairs},
       {null,             oneGateUp,          null},
    };
 

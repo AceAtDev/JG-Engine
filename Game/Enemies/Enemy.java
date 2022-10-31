@@ -62,18 +62,26 @@ public class Enemy implements EnemyTemplates {
          System.out.println(name + " is blooking your way!");
          System.out.println(name + " HP's: " + currentEnemyHP);
          System.out.println("Your HP: " + currentPlayerHP);
-         int playerChose = Tools.AskInt(
-         "1: Attack\n" +
-         "2: Deffend");
+         char playerChose = Tools.AskChar(
+         "Q: Attack\n" +
+         "E: Deffend");
          
+         playerChose = Character.toLowerCase(playerChose);
+
          switch(playerChose){
-            case 1:
+            case 'q':
             // play damage audio
             currentEnemyHP = PlayerStates.doDamage(currentEnemyHP) + deffence;
             break;
    
-            case 2:
+            case 'e':
             PlayerStates.setDodgeAttack(true);
+            break;
+
+            case 'k': // you're not alowed to use this unless you the developer
+            currentEnemyHP = PlayerStates.doDamage(currentEnemyHP - 9999999) + deffence;
+            Dialogue.dialogprint("How dare you :(");
+            Tools.delayer(500);
 
             break;
             default:

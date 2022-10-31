@@ -31,8 +31,9 @@ public class PlayerController extends PlayerStates{ // this class should not be 
 
       MusicManager.playMusic(8);
       
-      if(isFinishedLevel == true)
+      if(isFinishedLevel == true){
          isFinishedLevel = false;
+      }
 
       while (isFinishedLevel == false){
 

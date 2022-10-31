@@ -10,7 +10,7 @@ import Game.Gameplay.audio.SoundManager;
 
 public class PlayerStates {
    
-   private static final int playerHP = 100;
+   private static final int playerHP = 125;
    
    private static int currentPlayerHP;
    private static int damage = 15;
