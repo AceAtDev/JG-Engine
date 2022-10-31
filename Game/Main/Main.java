@@ -18,7 +18,7 @@ class Main{
 
       Tools.ClearConsole();
       
-      /*
+      
       Dialogue.dialogprint("Game uses music and sound.");
       Tools.delayer(1000);
       Dialogue.dialogprint("For better experience please rise the sound of you device");
@@ -32,7 +32,7 @@ class Main{
 
 
       Cutscene.startingCutscene();
-      */
+      
 
       Level1 firstLevel = new Level1();
       firstLevel.start();
@@ -50,11 +50,9 @@ class Main{
       fourthLevel.start();
    
 
+      WinScreen.printWin();
+
    }
 
-
-   public void initialize(){
-      
-   }
 
 }
