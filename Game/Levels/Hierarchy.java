@@ -60,7 +60,7 @@ public class Hierarchy {
    
    private Room threeGatesLeftUpDownE = new Room(false,true,true,true, notCubeL3);
    private Room threeGatesLeftUpRightE = new Room(true,true,true,false);
-   private Room threeGatesDownRightLeftE = new Room(true, true,false,true);
+   private Room threeGatesDownRightLeftE = new Room(true, true,false,true, notCubeL3);
    private Room threeGatesRightDownUpE = new Room(true, false,true,true, notCubeL2);
 
 
@@ -76,15 +76,15 @@ public class Hierarchy {
    // do mapping here
    private Room[][] toturialRooms = { 
       {null,    twoGatesDownRight,  twoGatesRightLeftE, stairs},
-      {null,    twoGatesDownUpE,     null},
+      {null,    twoGatesDownUp,     null},
       {oneGateRight, startingRoom,     oneGateLeft},
       {null,    twoGatesUpRight,    oneGateLeftE},
    };
    // null are non-exsited area/Room
    
    private Room[][] secondRooms = { 
-      {stairs,             threeGatesDownRightLeft,    oneGateLeft,        null},
-      {null,               threeGatesRightDownUpE,    twoGatesRightLeft,    oneGateLeftE},
+      {stairs,             threeGatesDownRightLeftE,    oneGateLeft,        null},
+      {null,               threeGatesRightDownUp,    twoGatesRightLeft,    oneGateLeftE},
       {twoGatesDownRight,   startingRoom,          oneGateLeft,             null},
       {oneGateUp,          twoGatesUpRightE,        twoGatesRightLeft,    oneGateLeft},
    };

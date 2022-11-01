@@ -5,6 +5,7 @@ package Game.Rooms;
 public class Floor {
 
 
+   private static final Room NoteRoom = null;
    private Room currentRoom = null;
    private int currentRoomX = 0; // put them private after testing
    private int currentRoomY = 0; // put them private after testing
@@ -86,6 +87,12 @@ public class Floor {
 
       if(currentRoom.hasStairs == true){
          floorStair.moveNextFloor();
+      }
+   }
+
+   private void checkRoomEvent(){
+      if(currentRoom == NoteRoom){
+         //NoteRoom
       }
    }
 

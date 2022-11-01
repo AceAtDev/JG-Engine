@@ -12,6 +12,8 @@ public class Room implements RoomTemplates {
    protected boolean down = true;
    protected boolean hasStairs = false;
 
+   protected String note = "";
+
    protected Enemy doesContainEnemy;
 
    

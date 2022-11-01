@@ -30,6 +30,7 @@ public class Stairs extends Room{
       SoundManager.playSE(14);
       Tools.delayer(500);
       Dialogue.dialogprint("You have climbed the stairs to get closer to system");
+      Tools.delayer(1500);
 
       PlayerController.levelFinished(); // go to the next level
    }
