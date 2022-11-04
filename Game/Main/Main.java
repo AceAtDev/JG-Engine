@@ -16,12 +16,13 @@ class Main{
    
    public static void main(String[] args){
 
+      
       Tools.ClearConsole();
       
       
       Dialogue.dialogprint("Game uses music and sound.");
       Tools.delayer(1000);
-      Dialogue.dialogprint("For better experience please rise the sound of you device");
+      Dialogue.dialogprint("For better experience please rise the sound of your device");
       Tools.delayer(3500);
       Tools.ClearConsole();
       
@@ -32,7 +33,7 @@ class Main{
 
 
       Cutscene.startingCutscene();
-      
+       
 
       Level1 firstLevel = new Level1();
       firstLevel.start();
