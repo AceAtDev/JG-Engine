@@ -62,6 +62,11 @@ public class Hierarchy {
    private Room threeGatesLeftUpRightE = new Room(true,true,true,false);
    private Room threeGatesDownRightLeftE = new Room(true, true,false,true, notCubeL3);
    private Room threeGatesRightDownUpE = new Room(true, false,true,true, notCubeL2);
+   
+   
+   private Room twoGatesRightLeftN = new Room(true,true,false, false, 
+   "???: I have installed a new weapon to your tools, after all, you're a tool are you not? \n" + 
+   "Use \"k\" key on battle to finish off you enemy");
 
 
    private Room bossRoom = new Room(true,true,false,false, estran);

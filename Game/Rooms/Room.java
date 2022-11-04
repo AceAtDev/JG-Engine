@@ -1,5 +1,7 @@
 package Game.Rooms;
 
+import External.Tools;
+import Game.Dialogue.Dialogue;
 import Game.Enemies.Enemy;
 import Game.Gameplay.Controls.PlayerController;
 
@@ -39,12 +41,29 @@ public class Room implements RoomTemplates {
       this.doesContainEnemy = enemy;
    }
    
+   public Room(boolean right, boolean left, boolean up, boolean down, 
+   String note){ // A room with an enemy inside
+      this.up = up;
+      this.right = right;
+      this.down = down;
+      this.left = left;
+      this.note = note;
+   }
 
    public void callEnemy(){
       doesContainEnemy.enemyChallenged(PlayerController.getCurrentHP());
    }
 
-
+   
+   public void printNote(String note){
+      Dialogue.dialogprint(note);
+      Tools.delayer(2500);
+   }
+   
+   
+   public String getNote(){
+      return note;
+   }
 
    public boolean getRoomExitLeft(){
       return left;
@@ -109,16 +128,6 @@ public class Room implements RoomTemplates {
          return;
       }
 
-      /* 
-      if(right && left && !up && down){ // right - left
-         t
-         return;
-      }
-      if(!right && !left && up && down){ // down - up
-
-         return;
-      }
-      */
 
       if(right  && left  && up && !down ){ // right - left - up
          RoomTemplates.threeGatesLeftRightUp();
@@ -136,7 +145,6 @@ public class Room implements RoomTemplates {
          RoomTemplates.threeGatesLeftUpDown();
          return;
       }
-
 
 
       if(right && left && up && down ){ // open form every direction

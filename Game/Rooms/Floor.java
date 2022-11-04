@@ -92,7 +92,7 @@ public class Floor {
 
    private void checkRoomEvent(){
       if(currentRoom == NoteRoom){
-         //NoteRoom
+         
       }
    }
 
