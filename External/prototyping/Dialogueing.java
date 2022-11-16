@@ -1,6 +1,6 @@
 package External.prototyping;
 
-import External.Tools;
+import Game.Tools;
 import Game.Gameplay.audio.SoundManager;
 
 // this just for testing purposes

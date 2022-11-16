@@ -1,6 +1,6 @@
 package Game.Rooms;
 
-import External.Tools;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Enemies.Enemy;
 import Game.Gameplay.Controls.PlayerController;

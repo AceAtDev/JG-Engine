@@ -4,7 +4,7 @@
 package Game.Gameplay.Controls;
 
 
-import External.Tools;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.audio.SoundManager;
 

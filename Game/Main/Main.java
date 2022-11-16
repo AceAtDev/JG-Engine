@@ -2,8 +2,8 @@ package Game.Main;
 
 
 
-import External.Tools;
 import Game.Credits;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.Cutscenes.Cutscene;
 import Game.Levels.Level1;

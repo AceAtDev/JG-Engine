@@ -2,7 +2,7 @@
 // Date: 10/28/2022
 package Game.Enemies;
 
-import External.Tools;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.Controls.PlayerStates;
 import Game.Gameplay.audio.SoundManager;

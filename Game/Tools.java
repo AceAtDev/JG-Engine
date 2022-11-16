@@ -1,4 +1,4 @@
-package External;
+package Game;
 // A class which will be called to make life easier.
 // Note: every function here is independed and only require to be called and input values.
 // Date: 10/28/2022

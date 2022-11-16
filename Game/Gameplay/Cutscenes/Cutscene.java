@@ -4,7 +4,7 @@
 // Date: 10/28/2022
 package Game.Gameplay.Cutscenes;
 
-import External.Tools;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.audio.MusicManager;
 

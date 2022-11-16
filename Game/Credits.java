@@ -1,6 +1,5 @@
 package Game;
 
-import External.Tools;
 import Game.Dialogue.Dialogue;
 
 public class Credits {

@@ -1,7 +1,7 @@
 package Game.Gameplay.Controls;
 
 
-import External.Tools;
+import Game.Tools;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 import Game.Rooms.Floor;

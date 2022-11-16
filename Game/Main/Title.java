@@ -1,6 +1,6 @@
 package Game.Main;
 
-import External.Tools;
+import Game.Tools;
 
 final class Title {
    

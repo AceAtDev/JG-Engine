@@ -1,6 +1,6 @@
 package Game.Main;
 
-import External.Tools;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;

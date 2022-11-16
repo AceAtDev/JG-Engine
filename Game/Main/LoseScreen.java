@@ -3,7 +3,8 @@
 package Game.Main;
 
 import java.util.Random;
-import External.Tools;
+
+import Game.Tools;
 import Game.Gameplay.audio.MusicManager;
 import Game.Gameplay.audio.SoundManager;
 

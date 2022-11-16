@@ -2,7 +2,7 @@
 // Date: 10/28/2022
 package Game.Dialogue;
 
-import External.Tools;
+import Game.Tools;
 import Game.Gameplay.audio.SoundManager;
 
 public class Dialogue {

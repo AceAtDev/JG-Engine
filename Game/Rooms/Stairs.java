@@ -4,7 +4,7 @@
 
 package Game.Rooms;
 
-import External.Tools;
+import Game.Tools;
 import Game.Dialogue.Dialogue;
 import Game.Gameplay.Controls.PlayerController;
 import Game.Gameplay.audio.MusicManager;
